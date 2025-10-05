@@ -4,7 +4,7 @@
 - 在data/reference/openalex_cwts_schema.sql文件中可以找到他们的数据库表结构设计
 - 在CWTS-OpenAlex-databases文件夹中是他们解析处理所使用的代码（需要注意的是，并非所有代码都适用于本项目）
 
-现在，需要你帮助我，将原始的JSON格式数据依照上述SQL表结构转换为CSV格式，要求：
+现在，需要你帮助我，参考CWTS的解析代码，将原始的JSON格式数据依照上述SQL表结构转换为CSV格式，要求：
 - 每个表对应一个CSV文件，文件名应与表名相同
 - 每个CSV的表头应与SQL表的字段名称一致
 - 每个CSV的字段顺序应与SQL表的字段顺序一致
