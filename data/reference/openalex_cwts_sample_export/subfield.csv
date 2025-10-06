@@ -1,0 +1,253 @@
+﻿subfield_id,subfield,description,openalex_id,wikidata_id,wikipedia_url,domain_id,field_id,updated_date,created_date
+1102,Agronomy and Crop Science,"science and technology of producing and using plants for food, fuel, fiber, and reclamation",1102,Q173113,https://en.wikipedia.org/wiki/Agronomy,1,11,2024-08-26,2024-01-23
+1107,Forestry,"science and craft of creating, managing, using, conserving and repairing forests, woodlands, and associated resources for human and environmental benefits",1107,Q38112,https://en.wikipedia.org/wiki/Forestry,1,11,2024-08-26,2024-01-23
+1111,Soil Science,study of soil as a natural resource on the surface of the earth,1111,Q9161265,https://en.wikipedia.org/wiki/Soil_Science,1,11,2024-04-01,2024-01-23
+1203,Language and Linguistics,structured system of communication,1203,Q315,https://en.wikipedia.org/wiki/Language_and_Linguistics,2,12,2024-08-26,2024-01-23
+1207,History and Philosophy of Science,academic discipline,1207,Q5774812,https://en.wikipedia.org/wiki/History_and_Philosophy_of_Science,2,12,2024-08-26,2024-01-23
+1211,Philosophy,"study of the truths and principles of being, knowledge, or conduct",1211,Q5891,https://en.wikipedia.org/wiki/Philosophy,2,12,2024-04-01,2024-01-23
+1304,Biophysics,study of biological systems using methods from the physical sciences,1304,Q7100,https://en.wikipedia.org/wiki/Biophysics,1,13,2024-04-01,2024-01-23
+1308,Clinical Biochemistry,study of chemical processes in living organisms,1308,Q7094,https://en.wikipedia.org/wiki/Clinical_Biochemistry,1,13,2024-08-26,2024-01-23
+1315,Structural Biology,study of molecular structures in biology,1315,Q908902,https://en.wikipedia.org/wiki/Structural_Biology,1,13,2024-08-26,2024-01-23
+1403,Business and International Management,administration of a profit-oriented enterprise,1403,Q2043282,https://en.wikipedia.org/wiki/Business_administration,2,14,2024-08-26,2024-01-23
+1407,Organizational Behavior and Human Resource Management,study of human behavior in organizational settings,1407,Q19483216,https://en.wikipedia.org/wiki/Organizational_behavior,2,14,2024-08-26,2024-01-23
+1410,Industrial relations,"study of the relationship between employers, employees and others",1410,Q932071,https://en.wikipedia.org/wiki/Industrial_relations,2,14,2024-08-26,2024-01-23
+1502,Bioengineering,application of biology and engineering to create useful products,1502,Q580689,https://en.wikipedia.org/wiki/Bioengineering,3,15,2024-08-26,2024-01-23
+1602,Analytical Chemistry,"study of the separation, identification, and quantification of the chemical components of materials",1602,Q2346,https://en.wikipedia.org/wiki/Analytical_Chemistry,3,16,2024-08-26,2024-01-23
+1606,Physical and Theoretical Chemistry,academic field,1606,Q321150,https://en.wikipedia.org/wiki/Theoretical_chemistry,3,16,2024-08-26,2024-01-23
+1702,Artificial Intelligence,field of computer science and engineering practices for intelligence demonstrated by machines and intelligent agents,1702,Q11660,https://en.wikipedia.org/wiki/Artificial_Intelligence,3,17,2024-08-26,2024-01-23
+1706,Computer Science Applications,study of computation,1706,Q21198,https://en.wikipedia.org/wiki/Computer_science,3,17,2024-08-26,2024-01-23
+1710,Information Systems,"academic study of systems with a specific reference to information and the complementary networks of hardware and software that people and organizations use to collect, filter, process, create and also distribute data",1710,Q64812807,https://en.wikipedia.org/wiki/Information_Systems,3,17,2024-08-26,2024-01-23
+1902,Atmospheric Science,umbrella term for the study of the atmosphere,1902,Q757520,https://en.wikipedia.org/wiki/Atmospheric_Science,3,19,2024-08-26,2024-01-23
+1907,Geology,"study of the composition, structure, physical properties, and history of Earth's components, and the processes by which they are shaped",1907,Q1069,https://en.wikipedia.org/wiki/Geology,3,19,2024-08-26,2024-01-23
+1911,Paleontology,scientific study of the past of life on Earth through fossils,1911,Q7205,https://en.wikipedia.org/wiki/Paleontology,3,19,2024-08-26,2024-01-23
+2002,Economics and Econometrics,"social science that studies the production, distribution, and consumption of goods and services",2002,Q8134,https://en.wikipedia.org/wiki/Econometrics,2,20,2024-04-01,2024-01-23
+2103,Fuel Technology,"technology used in the extraction, processing and consumption of fuel resources",2103,Q118189054,https://en.wikipedia.org/wiki/Fuel,3,21,2024-08-26,2024-01-23
+2202,Aerospace Engineering,branch of engineering,2202,Q3798668,https://en.wikipedia.org/wiki/Aerospace_Engineering,3,22,2024-08-26,2024-01-23
+2206,Computational Mechanics,discipline concerned with the use of computational methods to study mechanics,2206,Q919765,https://en.wikipedia.org/wiki/Computational_Mechanics,3,22,2024-08-26,2024-01-23
+2209,Industrial and Manufacturing Engineering,"discipline of engineering dealing with various manufacturing sciences and practices including the research, design and development of systems, processes, machines, tools, and equipment",2209,Q11049265,https://en.wikipedia.org/wiki/Industrial_engineering,3,22,2024-08-26,2024-01-23
+2213,"Safety, Risk, Reliability and Quality","state of being secure from harm, injury, danger, or other non-desirable outcomes",2213,Q10566551,https://en.wikipedia.org/wiki/Reliability_engineering,3,22,2024-08-26,2024-01-23
+2306,Global and Planetary Change,planetary-scale changes in the Earth system,2306,Q737514,https://en.wikipedia.org/wiki/Global_and_Planetary_Change,3,23,2024-08-26,2024-01-23
+2310,Pollution,introduction of contaminants into the natural environment that cause adverse change,2310,Q58734,https://en.wikipedia.org/wiki/Pollution,3,23,2024-08-26,2024-01-23
+2405,Parasitology,"branch of biology that studies parasites, their hosts, and the relationship between them",2405,Q180502,https://en.wikipedia.org/wiki/Parasitology,1,24,2024-08-26,2024-01-23
+2500,General Materials Science,"research, discovery and design of physical materials (especially solids)",2500,Q228736,https://en.wikipedia.org/wiki/Materials_science,3,25,2024-08-26,2024-01-23
+2504,"Electronic, Optical and Magnetic Materials","substance that can occur in different amounts, all with some similar [mixture of some] characteristics, and with which objects can be made",2504,Q214609,https://en.wikipedia.org/wiki/Materials_science,3,25,2024-04-01,2024-01-23
+2508,"Surfaces, Coatings and Films",any adherent layer that covers a surface,2508,Q1570182,https://en.wikipedia.org/wiki/Coating,3,25,2024-08-26,2024-01-23
+2602,Algebra and Number Theory,part of mathematics in which letters and other symbols are used to represent numbers and quantities in formulae and equation,2602,Q3968,https://en.wikipedia.org/wiki/Algebra_and_Number_Theory,3,26,2024-08-26,2024-01-23
+2611,Modeling and Simulation,"use of models – physical, mathematical, or otherwise logical representation of a system, entity, phenomenon, or process – as a basis for simulations – methods for implementing a model (either statically or) over time",2611,Q6888384,https://en.wikipedia.org/wiki/Modeling_and_simulation,3,26,2024-08-26,2024-01-23
+2703,Anesthesiology and Pain Medicine,medical specialty concerned with anesthesia and perioperative care,2703,Q615057,https://en.wikipedia.org/wiki/Anesthesiology_and_Pain_Medicine,4,27,2024-08-26,2024-01-23
+2706,Critical Care and Intensive Care Medicine,"medical care subspecialty, treating critically ill",2706,Q679690,https://en.wikipedia.org/wiki/Intensive_care_unit,4,27,2024-08-26,2024-01-23
+2714,Family Practice,medical specialty,2714,Q3505712,https://en.wikipedia.org/wiki/Family_Practice,4,27,2024-08-26,2024-01-23
+2718,Health Informatics,"discipline at the intersection of information science, computer science, and health care",2718,Q870895,https://en.wikipedia.org/wiki/Health_Informatics,4,27,2024-08-26,2024-01-23
+2721,Hepatology,medical specialty,2721,Q668064,https://en.wikipedia.org/wiki/Hepatology,4,27,2024-08-26,2024-01-23
+2725,Infectious Diseases,disease caused by infection of pathogenic biological agents in a host organism,2725,Q18123741,https://en.wikipedia.org/wiki/Infectious_Diseases,4,27,2024-04-01,2024-01-23
+2729,Obstetrics and Gynecology,medical specialty,2729,Q80015,https://en.wikipedia.org/wiki/Obstetrics_and_Gynecology,4,27,2024-08-26,2024-01-23
+2733,Otorhinolaryngology,"surgical subspeciality concerned with ear, nose, and throat conditions",2733,Q189553,https://en.wikipedia.org/wiki/Otorhinolaryngology,4,27,2024-08-26,2024-01-23
+2736,Pharmacology,branch of biology concerning drugs,2736,Q128406,https://en.wikipedia.org/wiki/Pharmacology,4,27,2024-08-26,2024-01-23
+2740,Pulmonary and Respiratory Medicine,"branch of medicine concerned with the diagnosis, treatment, and prevention of diseases affecting the lungs and respiratory system, including asthma, COPD, and pulmonary infections",2740,Q96730933,https://en.wikipedia.org/wiki/Pulmonology,4,27,2024-08-26,2024-01-23
+2748,Urology,a medical and surgical specialty that focuses on diagnosing and treating disorders of the urinary tract and male reproductive organs,2748,Q105650,https://en.wikipedia.org/wiki/Urology,4,27,2024-08-26,2024-01-23
+2805,Cognitive Neuroscience,scientific field concerned with cognition,2805,Q1138951,https://en.wikipedia.org/wiki/Cognitive_Neuroscience,1,28,2024-08-26,2024-01-23
+2809,Sensory Systems,ability to interpret the surrounding environment using light in the visible spectrum,2809,Q162668,https://en.wikipedia.org/wiki/Sensory_nervous_system,1,28,2024-08-26,2024-01-23
+2910,"Issues, ethics and legal aspects","branch of philosophy that systematizes, defends, and recommends concepts of right and wrong conduct",2910,Q9465,https://en.wikipedia.org/wiki/Ethics,4,29,2024-08-26,2024-01-23
+3002,Drug Discovery,the process by which new candidate medications are discovered,3002,Q1418791,https://en.wikipedia.org/wiki/Drug_Discovery,1,30,2024-08-26,2024-01-23
+3107,"Atomic and Molecular Physics, and Optics",branch of physics,3107,Q489328,"https://en.wikipedia.org/wiki/Atomic,_molecular,_and_optical_physics",3,31,2024-08-26,2024-01-23
+3202,Applied Psychology,application of psychological theories or findings,3202,Q538904,https://en.wikipedia.org/wiki/Applied_Psychology,2,32,2024-08-26,2024-01-23
+3206,Neuropsychology and Physiological Psychology,study of the brain related to specific psychological processes and behaviors,3206,Q3872,https://en.wikipedia.org/wiki/Cognitive_neuropsychology,2,32,2024-08-26,2024-01-23
+3305,"Geography, Planning and Development","science that studies the terrestrial surface, the societies that inhabit it and the territories, landscapes, places or regions that form it when interacting with each other",3305,Q1071,https://en.wikipedia.org/wiki/Urban_planning,2,33,2024-08-26,2024-01-23
+3309,Library and Information Sciences,professional training program merging of the two fields library science and information science,3309,Q13420675,https://en.wikipedia.org/wiki/Library_and_information_science,2,33,2024-08-26,2024-01-23
+3312,Sociology and Political Science,academic disciplines concerned with society and the relationships between individuals in society,3312,Q34749,https://en.wikipedia.org/wiki/Political_sociology,2,33,2024-08-26,2024-01-23
+3316,Cultural Studies,academic field of critical theory and literary criticism,3316,Q1143546,https://en.wikipedia.org/wiki/Cultural_Studies,2,33,2024-08-26,2024-01-23
+3320,Political Science and International Relations,academic discipline,3320,Q55659900,https://en.wikipedia.org/wiki/Political_science,2,33,2024-08-26,2024-01-23
+3402,Equine,domesticated four-footed mammal from the equine family,3402,Q726,https://en.wikipedia.org/wiki/Equine,4,34,2024-08-26,2024-01-23
+3600,General Health Professions,type of profession,3600,Q3922583,https://en.wikipedia.org/wiki/Health_professional,4,36,2024-08-26,2024-01-23
+3604,Emergency Medical Services,type of emergency service dedicated to providing out-of-hospital acute medical care and transport to definitive care,3604,Q860447,https://en.wikipedia.org/wiki/Emergency_Medical_Services,4,36,2024-08-26,2024-01-23
+3608,Medical Terminology,"language used in the field of medicine to precisely describe the human body including its components, processes, conditions affecting it, and procedures performed upon it",3608,Q1192539,https://en.wikipedia.org/wiki/Medical_terminology,4,36,2024-08-26,2024-01-23
+3612,"Physical Therapy, Sports Therapy and Rehabilitation",health profession that aims to address the illnesses or injuries that limit a person's abilities to function in everyday lives,3612,Q186005,https://en.wikipedia.org/wiki/Physical_therapy,4,36,2024-08-26,2024-01-23
+1103,Animal Science and Zoology,scientific study of animals,1103,Q431,https://en.wikipedia.org/wiki/Zoology,1,11,2024-08-26,2024-01-23
+1106,Food Science,applied science devoted to the study of food,1106,Q1637030,https://en.wikipedia.org/wiki/Food_Science,1,11,2024-08-26,2024-01-23
+1110,Plant Science,science of plant life,1110,Q441,https://en.wikipedia.org/wiki/Plant_Science,1,11,2024-08-26,2024-01-23
+1202,History,past events and their tracks or records,1202,Q309,https://en.wikipedia.org/wiki/History,2,12,2024-04-01,2024-01-23
+1206,Conservation,"practice of protecting the natural environment by individuals, organizations and governments",1206,Q832237,https://en.wikipedia.org/wiki/Conservation,2,12,2024-08-26,2024-01-23
+1210,Music,art/activity of creating art using sound,1210,Q638,https://en.wikipedia.org/wiki/Music,2,12,2024-08-26,2024-01-23
+1305,Biotechnology,use of living systems and organisms to develop or make useful products,1305,Q7108,https://en.wikipedia.org/wiki/Biotechnology,1,13,2024-08-26,2024-01-23
+1309,Developmental Biology,explores the processes by which individual organisms grow and develop (ontogeny),1309,Q213713,https://en.wikipedia.org/wiki/Developmental_Biology,1,13,2024-08-26,2024-01-23
+1314,Physiology,science regarding function of organisms or living systems,1314,Q521,https://en.wikipedia.org/wiki/Physiology,1,13,2024-08-26,2024-01-23
+1402,Accounting,"measurement, processing and communication of financial information about economic entities",1402,Q4116214,https://en.wikipedia.org/wiki/Accounting,2,14,2024-08-26,2024-01-23
+1406,Marketing,"study and process of promoting, distributing, and selling products or services to customers",1406,Q39809,https://en.wikipedia.org/wiki/Marketing,2,14,2024-08-26,2024-01-23
+1503,Catalysis,process of increasing the rate of a chemical reaction,1503,Q82264,https://en.wikipedia.org/wiki/Catalysis,3,15,2024-08-26,2024-01-23
+1504,Chemical Health and Safety,prevention of occupational hazards,1504,Q1069289,https://en.wikipedia.org/wiki/Chemical_safety,3,15,2024-08-26,2024-01-23
+1508,Process Chemistry and Technology,arm of pharmaceutical chemistry concerned with the development and optimization of a synthetic scheme and pilot plant procedure to manufacture compounds for the drug development phase,1508,Q17076263,https://en.wikipedia.org/wiki/Process_chemistry,3,15,2024-08-26,2024-01-23
+1603,Electrochemistry,branch of chemistry,1603,Q7877,https://en.wikipedia.org/wiki/Electrochemistry,3,16,2024-08-26,2024-01-23
+1607,Spectroscopy,measurement and interpretation of interactions between matter and electromagnetic radiation of varying frequencies,1607,Q483666,https://en.wikipedia.org/wiki/Spectroscopy,3,16,2024-08-26,2024-01-23
+1703,Computational Theory and Mathematics,area of mathematics,1703,Q1122491,https://en.wikipedia.org/wiki/Computational_mathematics,3,17,2024-08-26,2024-01-23
+1707,Computer Vision and Pattern Recognition,computerized information extraction from images,1707,Q844240,https://en.wikipedia.org/wiki/Computer_vision,3,17,2024-08-26,2024-01-23
+1711,Signal Processing,models and analyzes data representations of physical events,1711,Q208163,https://en.wikipedia.org/wiki/Signal_Processing,3,17,2024-08-26,2024-01-23
+1800,General Decision Sciences,branch of applied probability theory,1800,Q177571,https://en.wikipedia.org/wiki/Decision_theory,2,18,2024-08-26,2024-01-23
+1804,"Statistics, Probability and Uncertainty","study of the collection, analysis, interpretation, and presentation of data",1804,Q12483,https://en.wikipedia.org/wiki/Propagation_of_uncertainty,2,18,2024-08-26,2024-01-23
+1906,Geochemistry and Petrology,"scientific study of the chemical composition of the Earth and other planets, focusing on the processes and conditions that influence the formation, structure, and composition of rocks and minerals",1906,Q93786009,https://en.wikipedia.org/wiki/Petrology,3,19,2024-08-26,2024-01-23
+1910,Oceanography,branch of Earth science that studies the ocean,1910,Q43518,https://en.wikipedia.org/wiki/Oceanography,3,19,2024-08-26,2024-01-23
+2003,Finance,"academic discipline studying businesses, financing, investments and protection of economic value",2003,Q43015,https://en.wikipedia.org/wiki/Finance,2,20,2024-08-26,2024-01-23
+2102,Energy Engineering and Power Technology,broad field of engineering dealing with energy,2102,Q3353193,https://en.wikipedia.org/wiki/Power_plant_engineering,3,21,2024-08-26,2024-01-23
+2203,Automotive Engineering,discipline of engineering,2203,Q124192,https://en.wikipedia.org/wiki/Automotive_Engineering,3,22,2024-08-26,2024-01-23
+2207,Control and Systems Engineering,"engineering discipline that applies control theory to design systems with desired behaviors, focusing on the development and implementation of control systems in machinery, processes, and automation",2207,Q96703125,https://en.wikipedia.org/wiki/Control_engineering,3,22,2024-08-26,2024-01-23
+2208,Electrical and Electronic Engineering,"electrical engineering discipline which utilizes nonlinear and active electrical components to design electronic circuits, devices, and their systems",2208,Q126095,https://en.wikipedia.org/wiki/Electrical_and_Electronic_Engineering,3,22,2024-08-26,2024-01-23
+2212,Ocean Engineering,engineering of devices within the ocean environment,2212,Q26229359,https://en.wikipedia.org/wiki/Ocean_Engineering,3,22,2024-08-26,2024-01-23
+2216,Architecture,"both the process and product of planning, designing and construction",2216,Q12271,https://en.wikipedia.org/wiki/Architecture,3,22,2024-08-26,2024-01-23
+2307,"Health, Toxicology and Mutagenesis","branch of biology, chemistry, and medicine",2307,Q7218,https://en.wikipedia.org/wiki/Toxicology,3,23,2024-08-26,2024-01-23
+2311,Industrial and Manufacturing Engineering,"discipline of engineering dealing with various manufacturing sciences and practices including the research, design and development of systems, processes, machines, tools, and equipment",2311,Q11049265,https://en.wikipedia.org/wiki/Industrial_engineering,3,23,2024-08-26,2024-01-23
+2404,Microbiology,study of microscopic organisms,2404,Q7193,https://en.wikipedia.org/wiki/Microbiology,1,24,2024-08-26,2024-01-23
+2505,Materials Chemistry,"study of the synthesis, structure, and properties of solid phase materials",2505,Q908684,https://en.wikipedia.org/wiki/Materials_Chemistry,3,25,2024-08-26,2024-01-23
+2607,Discrete Mathematics and Combinatorics,study of discrete mathematical structures,2607,Q121416,https://en.wikipedia.org/wiki/Discrete_mathematics,3,26,2024-08-26,2024-01-23
+2610,Mathematical Physics,use of mathematics to solve physics problems,2610,Q156495,https://en.wikipedia.org/wiki/Mathematical_Physics,3,26,2024-08-26,2024-01-23
+2614,Theoretical Computer Science,subfield of computer science and mathematics,2614,Q2878974,https://en.wikipedia.org/wiki/Theoretical_Computer_Science,3,26,2024-08-26,2024-01-23
+2702,Anatomy,study of the structure and parts of organisms,2702,Q514,https://en.wikipedia.org/wiki/Anatomy,4,27,2024-08-26,2024-01-23
+2707,Complementary and alternative medicine,form of non-scientific healing,2707,Q188504,https://en.wikipedia.org/wiki/Complementary_and_alternative_medicine,4,27,2024-08-26,2024-01-23
+2711,Emergency Medicine,medical specialty concerned with care for patients who require immediate medical attention,2711,Q2861470,https://en.wikipedia.org/wiki/Emergency_Medicine,4,27,2024-08-26,2024-01-23
+2715,Gastroenterology,branch of medicine focused on the digestive system and its disorders,2715,Q120569,https://en.wikipedia.org/wiki/Gastroenterology,4,27,2024-08-26,2024-01-23
+2720,Hematology,"study of blood, the blood-forming organs, and blood diseases",2720,Q103824,https://en.wikipedia.org/wiki/Hematology,4,27,2024-08-26,2024-01-23
+2724,Internal Medicine,"medical specialty dealing with the prevention, diagnosis, and treatment of  diseases of internal organs",2724,Q11180,https://en.wikipedia.org/wiki/Internal_Medicine,4,27,2024-08-26,2024-01-23
+2728,Neurology,medical specialty dealing with disorders of the nervous system,2728,Q83042,https://en.wikipedia.org/wiki/Neurology,4,27,2024-08-26,2024-01-23
+2732,Orthopedics and Sports Medicine,branch of medicine dealing with the correction of deformities of bones or muscles,2732,Q216685,https://en.wikipedia.org/wiki/Orthopedic_surgery,4,27,2024-04-01,2024-01-23
+2737,Physiology,science regarding function of organisms or living systems,2737,Q521,https://en.wikipedia.org/wiki/Physiology,4,27,2024-08-26,2024-01-23
+2741,"Radiology, Nuclear Medicine and Imaging",specialty that uses medical imaging to diagnose and treat diseases seen within the body,2741,Q77604,https://en.wikipedia.org/wiki/Nuclear_medicine,4,27,2024-08-26,2024-01-23
+2745,Rheumatology,"medical specialty dealing with autoimmune diseases, especially those of joints and connective tissues, including arthritis",2745,Q327657,https://en.wikipedia.org/wiki/Rheumatology,4,27,2024-08-26,2024-01-23
+2804,Cellular and Molecular Neuroscience,branch of neuroscience,2804,Q6896018,https://en.wikipedia.org/wiki/Cellular_neuroscience,1,28,2024-08-26,2024-01-23
+2808,Neurology,medical specialty dealing with disorders of the nervous system,2808,Q83042,https://en.wikipedia.org/wiki/Neurology,1,28,2024-08-26,2024-01-23
+2911,Leadership and Management,academic degree,2911,Q64689271,https://en.wikipedia.org/wiki/Leadership,4,29,2024-08-26,2024-01-23
+2916,Nutrition and Dietetics,field of research,2916,Q113129166,https://en.wikipedia.org/wiki/Nutrition,4,29,2024-08-26,2024-01-23
+3003,Pharmaceutical Science,"area of study concerned with drugs at every stage, from design to disposition",3003,Q7180763,https://en.wikipedia.org/wiki/Pharmaceutical_Science,1,30,2024-08-26,2024-01-23
+3106,Nuclear and High Energy Physics,physics of elementary particles at high energies,3106,Q350265,https://en.wikipedia.org/wiki/High-energy_nuclear_physics,3,31,2024-08-26,2024-01-23
+3203,Clinical Psychology,integration of science and clinical knowledge for the purpose of relieving psychologically based dysfunction,3203,Q199906,https://en.wikipedia.org/wiki/Clinical_Psychology,2,32,2024-08-26,2024-01-23
+3207,Social Psychology,"scientific study of social effects on people's thoughts, feelings, and behaviors",3207,Q161272,https://en.wikipedia.org/wiki/Social_Psychology,2,32,2024-08-26,2024-01-23
+3300,General Social Sciences,academic disciplines concerned with society and the relationships between individuals in society,3300,Q34749,https://en.wikipedia.org/wiki/Social_science,2,33,2024-04-01,2024-01-23
+3304,Education,transmission of knowledge and skills,3304,Q8434,https://en.wikipedia.org/wiki/Education,2,33,2024-08-26,2024-01-23
+3308,Law,"system of rules and guidelines, generally backed by governmental authority",3308,Q7748,https://en.wikipedia.org/wiki/Law,2,33,2024-08-26,2024-01-23
+3313,Transportation,human-directed movement of things or people between locations,3313,Q7590,https://en.wikipedia.org/wiki/Transportation,2,33,2024-08-26,2024-01-23
+3317,Demography,science that deals with populations and their structures statistically and theoretically,3317,Q37732,https://en.wikipedia.org/wiki/Demography,2,33,2024-08-26,2024-01-23
+3321,Public Administration,"generic term for the administrations that perform tasks of the state, including bodies governed by public law",3321,Q31728,https://en.wikipedia.org/wiki/Public_Administration,2,33,2024-08-26,2024-01-23
+3506,Periodontics,field of dentistry,3506,Q938196,https://en.wikipedia.org/wiki/Periodontics,4,35,2024-08-26,2024-01-23
+3605,Health Information Management,academic discipline,3605,Q55693901,https://en.wikipedia.org/wiki/Health_Information_Management,4,36,2024-08-26,2024-01-23
+3609,Occupational Therapy,therapy to increase skills related to work or independent living,3609,Q380141,https://en.wikipedia.org/wiki/Occupational_Therapy,4,36,2024-08-26,2024-01-23
+1104,Aquatic Science,multidisciplinary study of freshwater and marine ecosystems,1104,Q4782809,https://en.wikipedia.org/wiki/Aquatic_Science,1,11,2024-08-26,2024-01-23
+1108,Horticulture,agriculture of plants,1108,Q48803,https://en.wikipedia.org/wiki/Horticulture,1,11,2024-08-26,2024-01-23
+1200,General Arts and Humanities,"study of the products of human culture such as art, historical artifacts etc",1200,Q80083,https://en.wikipedia.org/wiki/Humanities,2,12,2024-08-26,2024-01-23
+1204,Archeology,study of the past via material culture,1204,Q23498,https://en.wikipedia.org/wiki/Archeology,2,12,2024-04-01,2024-01-23
+1208,Literature and Literary Theory,"polysemous term referring to a written art form, and the set of all literary works",1208,Q8242,https://en.wikipedia.org/wiki/Literary_theory,2,12,2024-08-26,2024-01-23
+1212,Religious studies,objective study of religion,1212,Q34187,https://en.wikipedia.org/wiki/Religious_studies,2,12,2024-08-26,2024-01-23
+1303,Biochemistry,study of chemical processes in living organisms,1303,Q7094,https://en.wikipedia.org/wiki/Biochemistry,1,13,2024-08-26,2024-01-23
+1307,Cell Biology,scientific discipline that studies cells,1307,Q7141,https://en.wikipedia.org/wiki/Cell_Biology,1,13,2024-08-26,2024-01-23
+1311,Genetics,"science of genes, heredity, and variation in living organisms",1311,Q7162,https://en.wikipedia.org/wiki/Genetics,1,13,2024-08-26,2024-01-23
+1312,Molecular Biology,branch of biology that deals with the molecular basis of biological activity,1312,Q7202,https://en.wikipedia.org/wiki/Molecular_Biology,1,13,2024-08-26,2024-01-23
+1404,Management Information Systems,information system used for decision-making,1404,Q61905,https://en.wikipedia.org/wiki/Management_Information_Systems,2,14,2024-08-26,2024-01-23
+1409,"Tourism, Leisure and Hospitality Management",study of the hospitality industry.,1409,Q15816013,https://en.wikipedia.org/wiki/Hospitality_management_studies,2,14,2024-08-26,2024-01-23
+1506,Filtration and Separation,separating components suspended in a fluid based on granularity properties relying on a filter device,1506,Q244772,https://en.wikipedia.org/wiki/Filtration,3,15,2024-08-26,2024-01-23
+1605,Organic Chemistry,"subdiscipline within chemistry involving the scientific study of carbon-based compounds, hydrocarbons, and their derivatives",1605,Q11351,https://en.wikipedia.org/wiki/Organic_Chemistry,3,16,2024-08-26,2024-01-23
+1705,Computer Networks and Communications,network that allows computers to share resources and communicate with each other,1705,Q1301371,https://en.wikipedia.org/wiki/Computer_network,3,17,2024-08-26,2024-01-23
+1709,Human-Computer Interaction,academic discipline,1709,Q207434,https://en.wikipedia.org/wiki/Human-Computer_Interaction,3,17,2024-08-26,2024-01-23
+1712,Software,non-tangible executable component of a computer,1712,Q7397,https://en.wikipedia.org/wiki/Software,3,17,2024-08-26,2024-01-23
+1802,Information Systems and Management,book,1802,Q111720058,https://en.wikipedia.org/wiki/Management_information_system,2,18,2024-08-26,2024-01-23
+1904,Earth-Surface Processes,term for the surface of the Earth,1904,Q1349417,https://en.wikipedia.org/wiki/Earth_Surface_Processes_and_Landforms,3,19,2024-08-26,2024-01-23
+1908,Geophysics,study of physical processes and phenomena occurring in the earth and in its vicinity,1908,Q46255,https://en.wikipedia.org/wiki/Geophysics,3,19,2024-08-26,2024-01-23
+1912,Space and Planetary Science,science of astronomical objects apparently in orbit around one or more stellar objects within a few light years,1912,Q104499,https://en.wikipedia.org/wiki/Planetary_science,3,19,2024-08-26,2024-01-23
+2100,General Energy,Czech company,2100,Q67814913,https://en.wikipedia.org/wiki/Energy,3,21,2024-08-26,2024-01-23
+2104,Nuclear Energy and Engineering,power generated from nuclear reactions,2104,Q12739,https://en.wikipedia.org/wiki/Nuclear_engineering,3,21,2024-08-26,2024-01-23
+2205,Civil and Structural Engineering,"engineering discipline specializing in design, construction and maintenance of the built environment",2205,Q77590,https://en.wikipedia.org/wiki/Civil_engineering,3,22,2024-08-26,2024-01-23
+2210,Mechanical Engineering,engineering discipline,2210,Q101333,https://en.wikipedia.org/wiki/Mechanical_Engineering,3,22,2024-08-26,2024-01-23
+2214,Media Technology,"field of study and practice that explores the development, application, and impact of digital and media technologies in communication, entertainment, and information dissemination",2214,Q1916441,https://en.wikipedia.org/wiki/Media_Technology,3,22,2024-08-26,2024-01-23
+2302,Ecological Modeling,computational or theoretical approach to ecology,2302,Q114110264,https://en.wikipedia.org/wiki/Ecological_Modeling,3,23,2024-08-26,2024-01-23
+2305,Environmental Engineering,professional engineering discipline related to environmental science,2305,Q146326,https://en.wikipedia.org/wiki/Environmental_Engineering,3,23,2024-08-26,2024-01-23
+2309,Nature and Landscape Conservation,conservation of nature,2309,Q20113959,https://en.wikipedia.org/wiki/Nature_conservation,3,23,2024-08-26,2024-01-23
+2402,Applied Microbiology and Biotechnology,study of microscopic organisms,2402,Q7193,https://en.wikipedia.org/wiki/Applied_Microbiology_and_Biotechnology,1,24,2024-08-26,2024-01-23
+2406,Virology,study of viruses,2406,Q7215,https://en.wikipedia.org/wiki/Virology,1,24,2024-08-26,2024-01-23
+2503,Ceramics and Composites,"inorganic, nonmetallic solid prepared by the action of heat",2503,Q45621,https://en.wikipedia.org/wiki/Ceramic,3,25,2024-04-01,2024-01-23
+2507,Polymers and Plastics,substance composed of macromolecules with repeating structural units,2507,Q81163,https://en.wikipedia.org/wiki/Plastic,3,25,2024-08-26,2024-01-23
+2605,Computational Mathematics,area of mathematics,2605,Q1122491,https://en.wikipedia.org/wiki/Computational_Mathematics,3,26,2024-08-26,2024-01-23
+2608,Geometry and Topology,branch of mathematics at the intersection between geometry and topology,2608,Q5535522,https://en.wikipedia.org/wiki/Geometry_and_Topology,3,26,2024-08-26,2024-01-23
+2612,Numerical Analysis,study of algorithms that use numerical approximation for the problems of mathematical analysis,2612,Q11216,https://en.wikipedia.org/wiki/Numerical_Analysis,3,26,2024-04-01,2024-01-23
+2705,Cardiology and Cardiovascular Medicine,branch of medicine dealing with disorders of the heart as well as parts of the circulatory system,2705,Q10379,https://en.wikipedia.org/wiki/Cardiology,4,27,2024-08-26,2024-01-23
+2713,Epidemiology,"study of the patterns, causes, and effects of health and disease conditions",2713,Q133805,https://en.wikipedia.org/wiki/Epidemiology,4,27,2024-08-26,2024-01-23
+2717,Geriatrics and Gerontology,specialty that focuses on health care of elderly people,2717,Q10384,https://en.wikipedia.org/wiki/Geriatrics,4,27,2024-08-26,2024-01-23
+2726,Microbiology,study of microscopic organisms,2726,Q7193,https://en.wikipedia.org/wiki/Microbiology,4,27,2024-08-26,2024-01-23
+2730,Oncology,branch of medicine dealing with cancer,2730,Q162555,https://en.wikipedia.org/wiki/Oncology,4,27,2024-08-26,2024-01-23
+2734,Pathology and Forensic Medicine,study and diagnosis of disease,2734,Q7208,https://en.wikipedia.org/wiki/Forensic_pathology,4,27,2024-03-18,2024-01-23
+2739,"Public Health, Environmental and Occupational Health","science and art of preventing disease, prolonging life and promoting health through organized efforts and informed choices of society, organizations, public and private, communities and individuals",2739,Q189603,https://en.wikipedia.org/wiki/Environmental_health,4,27,2024-08-26,2024-01-23
+2743,Reproductive Medicine,"medicine dealing with prevention, diagnosis and management of reproductive problems",2743,Q351870,https://en.wikipedia.org/wiki/Reproductive_Medicine,4,27,2024-08-26,2024-01-23
+2747,Transplantation,moving of an organ or tissue from one body or body region to another,2747,Q105196,https://en.wikipedia.org/wiki/Transplantation,4,27,2024-08-26,2024-01-23
+2802,Behavioral Neuroscience,field of scientific study,2802,Q846566,https://en.wikipedia.org/wiki/Behavioral_Neuroscience,1,28,2024-08-26,2024-01-23
+2806,Developmental Neuroscience,scientific study of the nervous system,2806,Q207011,https://en.wikipedia.org/wiki/Developmental_Neuroscience,1,28,2024-04-01,2024-01-23
+2922,Research and Theory,systematic study undertaken to increase knowledge,2922,Q42240,https://en.wikipedia.org/wiki/Research,4,29,2024-08-26,2024-01-23
+3005,Toxicology,"scientific study of the harmful effects that chemicals, substances, or situations can have on living organisms and the environment",3005,Q7218,https://en.wikipedia.org/wiki/Toxicology,1,30,2024-08-26,2024-01-23
+3103,Astronomy and Astrophysics,scientific study of celestial objects and phenomena,3103,Q333,https://en.wikipedia.org/wiki/Astronomy_and_Astrophysics,3,31,2024-08-26,2024-01-23
+3104,Condensed Matter Physics,branch of physics dealing with a property of matter,3104,Q214781,https://en.wikipedia.org/wiki/Condensed_Matter_Physics,3,31,2024-08-26,2024-01-23
+3108,Radiation,"waves or particles propagating through space or through a medium, carrying energy",3108,Q18335,https://en.wikipedia.org/wiki/Radiation,3,31,2024-08-26,2024-01-23
+3205,Experimental and Cognitive Psychology,subdiscipline of psychology,3205,Q23373,https://en.wikipedia.org/wiki/Experimental_psychology,2,32,2024-08-26,2024-01-23
+3302,Archeology,study of the past via material culture,3302,Q23498,https://en.wikipedia.org/wiki/Archeology,2,33,2024-08-26,2024-01-23
+3306,Health,desirable level of functional or metabolic efficiency of a living being,3306,Q12147,https://en.wikipedia.org/wiki/Health,2,33,2024-08-26,2024-01-23
+3310,Linguistics and Language,book by Julia S. Falk,3310,Q112182478,https://en.wikipedia.org/wiki/Linguistics_and_Language,2,33,2024-08-26,2024-01-23
+3315,Communication,act of conveying intended meaning,3315,Q11024,https://en.wikipedia.org/wiki/Communication,2,33,2024-08-26,2024-01-23
+3319,Life-span and Life-course Studies,duration of life for an organism,3319,Q22675021,https://en.wikipedia.org/wiki/Life_expectancy,2,33,2024-08-26,2024-01-23
+3504,Oral Surgery,medical specialty,3504,Q504033,https://en.wikipedia.org/wiki/Oral_Surgery,4,35,2024-08-26,2024-01-23
+3603,Complementary and Manual Therapy,therapeutic practice not currently considered an integral part of conventional allopathic medical practice,3603,Q64831118,https://en.wikipedia.org/wiki/Manual_therapy,4,36,2024-08-26,2024-01-23
+3607,Medical Laboratory Technology,equipment and software used in medical laboratories,3607,Q28119945,https://en.wikipedia.org/wiki/Medical_laboratory,4,36,2024-08-26,2024-01-23
+3611,Pharmacy,"science that studies the chemical, pharmacological and pharmaceutical properties of drugs",3611,Q614304,https://en.wikipedia.org/wiki/Pharmacy,4,36,2024-08-26,2024-01-23
+3616,Speech and Hearing,"interdisciplinary field focused on the study of speech, language, and hearing processes and disorders, encompassing assessment, diagnosis, and treatment of communication and auditory impairments",3616,Q42195840,https://en.wikipedia.org/wiki/Speech,4,36,2024-08-26,2024-01-23
+1100,General Agricultural and Biological Sciences,cultivation of plants and animals to provide useful products,1100,Q11451,https://en.wikipedia.org/wiki/Agriculture,1,11,2024-08-26,2024-01-23
+1105,"Ecology, Evolution, Behavior and Systematics",scientific study of the relationships between living organisms,1105,Q7150,https://en.wikipedia.org/wiki/Ecology,1,11,2024-08-26,2024-01-23
+1109,Insect Science,scientific study of insects,1109,Q39286,https://en.wikipedia.org/wiki/Entomology,1,11,2024-08-26,2024-01-23
+1205,Classics,study of classical antiquity such as ancient Greece and ancient Rome,1205,Q841090,https://en.wikipedia.org/wiki/Classics,2,12,2024-08-26,2024-01-23
+1209,Museology,study of museums,1209,Q460162,https://en.wikipedia.org/wiki/Museology,2,12,2024-08-26,2024-01-23
+1213,Visual Arts and Performing Arts,an expansive category encompassing creative disciplines that engage the senses and express human creativity and imagination,1213,Q36649,https://en.wikipedia.org/wiki/Performing_arts,2,12,2024-08-26,2024-01-23
+1302,Aging,biological processes in a human body coupled to increasing age,1302,Q332154,https://en.wikipedia.org/wiki/Aging,1,13,2024-04-01,2024-01-23
+1306,Cancer Research,"research into cancer to identify causes and develop strategies for prevention, diagnosis, treatment, and cure",1306,Q3421914,https://en.wikipedia.org/wiki/Cancer_Research,1,13,2024-08-26,2024-01-23
+1310,Endocrinology,medical specialty,1310,Q162606,https://en.wikipedia.org/wiki/Endocrinology,1,13,2024-04-01,2024-01-23
+1313,Molecular Medicine,medical specialty and academic discipline,1313,Q3523816,https://en.wikipedia.org/wiki/Molecular_Medicine,1,13,2024-08-26,2024-01-23
+1405,Management of Technology and Innovation,set of management disciplines that allows organizations to manage their technological fundamentals to create competitive advantage,1405,Q1417293,https://en.wikipedia.org/wiki/Innovation_management,2,14,2024-08-26,2024-01-23
+1408,Strategy and Management,high-level plan to achieve objectives in uncertain conditions,1408,Q185451,https://en.wikipedia.org/wiki/Strategic_management,2,14,2024-08-26,2024-01-23
+1507,Fluid Flow and Transfer Processes,movement of fluid matter,1507,Q12142910,https://en.wikipedia.org/wiki/Fluid_dynamics,3,15,2024-04-01,2024-01-23
+1604,Inorganic Chemistry,study of the synthesis and behavior of inorganic and organometallic compounds,1604,Q11165,https://en.wikipedia.org/wiki/Inorganic_Chemistry,3,16,2024-08-26,2024-01-23
+1704,Computer Graphics and Computer-Aided Design,sub-field of computer science,1704,Q150971,https://en.wikipedia.org/wiki/Computer-aided_design,3,17,2024-08-26,2024-01-23
+1708,Hardware and Architecture,physical components of a computer,1708,Q3966,https://en.wikipedia.org/wiki/Hardware_architecture,3,17,2024-08-26,2024-01-23
+1803,Management Science and Operations Research,study of problem-solving in human organizations,1803,Q2414942,https://en.wikipedia.org/wiki/Management_science,2,18,2024-08-26,2024-01-23
+2000,"General Economics, Econometrics and Finance","social science that studies the production, distribution, and consumption of goods and services",2000,Q8134,https://en.wikipedia.org/wiki/Economics,2,20,2024-08-26,2024-01-23
+2105,"Renewable Energy, Sustainability and the Environment",energy collected from renewable resources,2105,Q12705,https://en.wikipedia.org/wiki/Renewable_energy,3,21,2024-08-26,2024-01-23
+2200,General Engineering,applied science,2200,Q11023,https://en.wikipedia.org/wiki/General_Engineering,3,22,2024-08-26,2024-01-23
+2204,Biomedical Engineering,application of engineering principles and design concepts to medicine and biology,2204,Q327092,https://en.wikipedia.org/wiki/Biomedical_Engineering,3,22,2024-08-26,2024-01-23
+2211,Mechanics of Materials,behavior of solid objects subject to stresses and strains,2211,Q240553,https://en.wikipedia.org/wiki/Strength_of_materials,3,22,2024-08-26,2024-01-23
+2215,Building and Construction,former West German trade union (1949–1995),2215,Q765464,https://en.wikipedia.org/wiki/Construction,3,22,2024-08-26,2024-01-23
+2303,Ecology,scientific study of the relationships between living organisms,2303,Q7150,https://en.wikipedia.org/wiki/Ecology,3,23,2024-08-26,2024-01-23
+2304,Environmental Chemistry,scientific study of the chemical and biochemical phenomena that occur in natural places,2304,Q321355,https://en.wikipedia.org/wiki/Environmental_chemistry,3,23,2024-08-26,2024-01-23
+2308,"Management, Monitoring, Policy and Law","system of rules and guidelines, generally backed by governmental authority",2308,Q7748,https://en.wikipedia.org/wiki/Management,3,23,2024-08-26,2024-01-23
+2312,Water Science and Technology,emphasis of groundwater and surface water in the understanding of water resource systems,2312,Q122739993,https://en.wikipedia.org/wiki/Water_Science_and_Technology,3,23,2024-08-26,2024-01-23
+2403,Immunology,branch of medicine studying the immune system,2403,Q101929,https://en.wikipedia.org/wiki/Immunology,1,24,2024-08-26,2024-01-23
+2502,Biomaterials,any substance that has been engineered to interact with biological systems for a medical purpose,2502,Q865663,https://en.wikipedia.org/wiki/Biomaterials,3,25,2024-08-26,2024-01-23
+2506,Metals and Alloys,an alloy designation system widely accepted in North America,2506,Q428822,https://en.wikipedia.org/wiki/Alloy,3,25,2024-04-01,2024-01-23
+2604,Applied Mathematics,discipline of mathematics,2604,Q33521,https://en.wikipedia.org/wiki/Applied_Mathematics,3,26,2024-08-26,2024-01-23
+2613,Statistics and Probability,"study of the collection, analysis, interpretation, and presentation of data",2613,Q12483,https://en.wikipedia.org/wiki/Probability_and_statistics,3,26,2024-08-26,2024-01-23
+2704,Biochemistry,study of chemical processes in living organisms,2704,Q7094,https://en.wikipedia.org/wiki/Biochemistry,4,27,2024-08-26,2024-01-23
+2708,Dermatology,"field of medicine dealing with the hair, nails, skin, and its diseases",2708,Q171171,https://en.wikipedia.org/wiki/Dermatology,4,27,2024-08-26,2024-01-23
+2712,"Endocrinology, Diabetes and Metabolism","medical specialty focusing on the endocrine system, its diseases, and their treatment, including diabetes management and metabolic disorders affecting hormone balance and body function",2712,Q96320251,https://en.wikipedia.org/wiki/Endocrinology,4,27,2024-08-26,2024-01-23
+2716,Genetics,"science of genes, heredity, and variation in living organisms",2716,Q7162,https://en.wikipedia.org/wiki/Genetics,4,27,2024-08-26,2024-01-23
+2723,Immunology and Allergy,branch of medicine studying the immune system,2723,Q101929,https://en.wikipedia.org/wiki/Allergy,4,27,2024-04-01,2024-01-23
+2727,Nephrology,medical specialty that concerns itself with the kidneys,2727,Q177635,https://en.wikipedia.org/wiki/Nephrology,4,27,2024-08-26,2024-01-23
+2731,Ophthalmology,field of medicine treating eye disorders,2731,Q161437,https://en.wikipedia.org/wiki/Ophthalmology,4,27,2024-08-26,2024-01-23
+2735,"Pediatrics, Perinatology and Child Health",field of medicine dealing with the care of children,2735,Q123028,https://en.wikipedia.org/wiki/Pediatrics,4,27,2024-08-26,2024-01-23
+2738,Psychiatry and Mental health,"branch of medicine devoted to the study, diagnosis, treatment, and prevention of mental disorders",2738,Q7867,https://en.wikipedia.org/wiki/Psychiatry,4,27,2024-08-26,2024-01-23
+2742,Rehabilitation,process to return a person to their formerly existing mental and health condition,2742,Q2795791,https://en.wikipedia.org/wiki/Rehabilitation,4,27,2024-08-26,2024-01-23
+2746,Surgery,medical specialty,2746,Q40821,https://en.wikipedia.org/wiki/Surgery,4,27,2024-08-26,2024-01-23
+2803,Biological Psychiatry,approach to psychiatry that aims to understand mental disorder in terms of the biological function of the nervous system,2803,Q2706176,https://en.wikipedia.org/wiki/Biological_Psychiatry,1,28,2024-08-26,2024-01-23
+2807,Endocrine and Autonomic Systems,medical specialty,2807,Q162606,https://en.wikipedia.org/wiki/Endocrine_system,1,28,2024-08-26,2024-01-23
+3004,Pharmacology,branch of biology concerning drugs,3004,Q128406,https://en.wikipedia.org/wiki/Pharmacology,1,30,2024-08-26,2024-01-23
+3102,Acoustics and Ultrasonics,"science that deals with the study of all mechanical waves in gases, liquids, and solids including vibration, sound, ultrasound and infrasound",3102,Q82811,https://en.wikipedia.org/wiki/Acoustics,3,31,2024-08-26,2024-01-23
+3105,Instrumentation,measuring instruments which monitor and control a process,3105,Q1770203,https://en.wikipedia.org/wiki/Instrumentation,3,31,2024-08-26,2024-01-23
+3109,Statistical and Nonlinear Physics,branch of physics,3109,Q677916,https://en.wikipedia.org/wiki/EPS_Statistical_and_Nonlinear_Physics_Prize,3,31,2024-08-26,2024-01-23
+3200,General Psychology,"branch of psychology that studies the mental functions, behaviors, and processes of individuals, exploring concepts such as perception, cognition, emotion, and motivation",3200,Q1361345,https://en.wikipedia.org/wiki/Psychology,2,32,2024-08-26,2024-01-23
+3204,Developmental and Educational Psychology,scientific study of changes that occur in human beings over the course of their lives,3204,Q175002,https://en.wikipedia.org/wiki/Developmental_psychology,2,32,2024-04-01,2024-01-23
+3303,Development,detailed developed land,3303,Q1074523,https://en.wikipedia.org/wiki/Development,2,33,2024-08-26,2024-01-23
+3307,Human Factors and Ergonomics,study of designing equipment and devices that fit the human body and its cognitive abilities,3307,Q1750812,https://en.wikipedia.org/wiki/Ergonomics,2,33,2024-08-26,2024-01-23
+3311,Safety Research,research discipline,3311,Q998500,https://en.wikipedia.org/wiki/Safety,2,33,2024-08-26,2024-01-23
+3314,Anthropology,"scientific study of humans, human behavior, and societies",3314,Q23404,https://en.wikipedia.org/wiki/Anthropology,2,33,2024-08-26,2024-01-23
+3318,Gender Studies,interdisciplinary academic field devoted to analysing gender identity and gendered representation,3318,Q1662673,https://en.wikipedia.org/wiki/Gender_Studies,2,33,2024-08-26,2024-01-23
+3322,Urban Studies,interdisciplinary field that examines the development and dynamics of cities and urban spaces,3322,Q23578769,https://en.wikipedia.org/wiki/Urban_Studies,2,33,2024-08-26,2024-01-23
+3404,Small Animals,kingdom of multicellular eukaryotic organisms,3404,Q729,https://en.wikipedia.org/wiki/Animal,4,34,2024-08-26,2024-01-23
+3500,General Dentistry,branch of medicine dealing with oral health and teeth,3500,Q12128,https://en.wikipedia.org/wiki/Dentistry,4,35,2024-08-26,2024-01-23
+3505,Orthodontics,"specialty of dentistry that deals with the diagnosis, prevention, and correction of malpositioned teeth and jaws, and misaligned bite patterns",3505,Q118301,https://en.wikipedia.org/wiki/Orthodontics,4,35,2024-08-26,2024-01-23
+3614,Radiological and Ultrasound Technology,specialty that uses medical imaging to diagnose and treat diseases seen within the body,3614,Q77604,https://en.wikipedia.org/wiki/Ultrasound,4,36,2024-08-26,2024-01-23

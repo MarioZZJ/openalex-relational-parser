@@ -1,0 +1,27 @@
+﻿field_id,field,description,openalex_id,wikidata_id,wikipedia_url,domain_id,updated_date,created_date
+14,"Business, Management and Accounting",administration of a commercial enterprise,14,Q18564125,https://en.wikipedia.org/wiki/Business_administration,2,2024-04-01,2024-01-23
+19,Earth and Planetary Sciences,all fields of natural science related to the planet Earth and other planets,19,Q107287417,https://en.wikipedia.org/wiki/Earth_science,3,2024-08-26,2024-01-23
+23,Environmental Science,interdisciplinary field that studies human interaction with the environment,23,Q188847,https://en.wikipedia.org/wiki/Environmental_science,3,2024-04-01,2024-01-23
+27,Medicine,"field of study for diagnosing, treating and preventing disease",27,Q11190,https://en.wikipedia.org/wiki/Medicine,4,2024-04-01,2024-01-23
+31,Physics and Astronomy,"study of matter and its motion, along with related concepts such as energy and force",31,Q413,https://en.wikipedia.org/wiki/Physics,3,2024-04-01,2024-01-23
+32,Psychology,study of mental functions and behaviours,32,Q9418,https://en.wikipedia.org/wiki/Psychology,2,2024-04-01,2024-01-23
+36,Health Professions,"field encompassing a wide range of disciplines focused on health care, treatment, and advice, including public health and occupational therapy",36,Q3922583,https://en.wikipedia.org/wiki/Health_professional,4,2024-08-26,2024-01-23
+11,Agricultural and Biological Sciences,"study of plant and animal biology for food, fuel, fiber, and reclamation, including environmental and economic impacts",11,Q173113,https://en.wikipedia.org/wiki/Agriculture,1,2024-04-01,2024-01-23
+15,Chemical Engineering,"branch of science that applies physical sciences and life sciences together with applied mathematics and economics to produce, transform, transport, and properly use chemicals, materials and energy",15,Q83588,https://en.wikipedia.org/wiki/Chemical_engineering,3,2024-04-01,2024-01-23
+18,Decision Sciences,branch of applied probability theory,18,Q177571,https://en.wikipedia.org/wiki/Decision_theory,2,2024-08-26,2024-01-23
+22,Engineering,"practice of using natural science, mathematics, and the engineering design process to solve technical problems",22,Q11023,https://en.wikipedia.org/wiki/Engineering,3,2024-04-01,2024-01-23
+26,Mathematics,"area of knowledge that includes the topics of numbers, formulas and related structures, shapes and the spaces in which they are contained, and quantities and their changes",26,Q395,https://en.wikipedia.org/wiki/Mathematics,3,2024-04-01,2024-01-23
+30,"Pharmacology, Toxicology and Pharmaceutics",branch of biology concerning drugs,30,Q128406,https://en.wikipedia.org/wiki/Pharmacology,1,2024-04-01,2024-01-23
+33,Social Sciences,academic disciplines concerned with society and the relationships between individuals in society,33,Q34749,https://en.wikipedia.org/wiki/Social_science,2,2024-04-01,2024-01-23
+13,"Biochemistry, Genetics and Molecular Biology",study of chemical processes in living organisms,13,Q7094,https://en.wikipedia.org/wiki/Biochemistry,1,2024-04-01,2024-01-23
+16,Chemistry,"branch of physical science concerned with the composition, structure and properties of matter",16,Q2329,https://en.wikipedia.org/wiki/Chemistry,3,2024-04-01,2024-01-23
+20,"Economics, Econometrics and Finance","social science that studies the production, distribution, and consumption of goods and services",20,Q8134,https://en.wikipedia.org/wiki/Economics,2,2024-04-01,2024-01-23
+24,Immunology and Microbiology,"study of the immune system and microorganisms, including their roles in health and disease",24,Q101929,https://en.wikipedia.org/wiki/Immunology,1,2024-08-26,2024-01-23
+28,Neuroscience,scientific study of the nervous system,28,Q207011,https://en.wikipedia.org/wiki/Neuroscience,1,2024-04-01,2024-01-23
+35,Dentistry,branch of medicine dealing with oral health and teeth,35,Q12128,https://en.wikipedia.org/wiki/Dentistry,4,2024-08-26,2024-01-23
+12,Arts and Humanities,"examination of human culture, including art, literature, philosophy, history, and artifacts",12,Q80083,https://en.wikipedia.org/wiki/Humanities,2,2024-04-01,2024-01-23
+17,Computer Science,study of computation,17,Q21198,https://en.wikipedia.org/wiki/Computer_science,3,2024-04-01,2024-01-23
+21,Energy,"study of energy in physical systems, its sources, technology, management, and impact on sustainability",21,Q11379,https://en.wikipedia.org/wiki/Energy,3,2024-08-26,2024-01-23
+25,Materials Science,"research, discovery and design of physical materials (especially solids)",25,Q228736,https://en.wikipedia.org/wiki/Materials_science,3,2024-08-26,2024-01-23
+29,Nursing,caring for people who are sick or injured,29,Q121176,https://en.wikipedia.org/wiki/Nursing,4,2024-04-01,2024-01-23
+34,Veterinary,"branch of medicine that deals with the prevention, management, diagnosis, and treatment of disease, disorder, and injury in non-human animals",34,Q170201,https://en.wikipedia.org/wiki/Veterinary_medicine,4,2024-08-26,2024-01-23
