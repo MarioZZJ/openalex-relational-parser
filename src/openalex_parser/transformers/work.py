@@ -517,16 +517,14 @@ class WorkTransformer:
                 first_author.get("raw_author_name")
                 or (first_author.get("author") or {}).get("display_name")
             )
-        author_et_al = "; ".join(
-            filter(
-                None,
-                [
-                    auth.get("raw_author_name")
-                    or (auth.get("author") or {}).get("display_name")
-                    for auth in other_authors
-                ],
-            )
-        )
+        other_names = [
+            auth.get("raw_author_name") or (auth.get("author") or {}).get("display_name")
+            for auth in other_authors
+            if auth.get("raw_author_name") or (auth.get("author") or {}).get("display_name")
+        ]
+        if len(other_names) > 4:
+            other_names = other_names[:3] + ["..."] + [other_names[-1]]
+        author_et_al = "; ".join(other_names)
 
         first_institution = None
         institution_et_al = ""
