@@ -49,9 +49,10 @@ def parse_iso_datetime(value: Optional[str]) -> Optional[str]:
     for fmt in ISO_DATE_FORMATS:
         try:
             dt = datetime.strptime(value, fmt)
-            if fmt == "%Y-%m-%d":
-                return dt.date().isoformat()
-            return dt.isoformat()
+            return dt.date().isoformat()
+            # if fmt == "%Y-%m-%d":
+            #     return dt.date().isoformat()
+            # return dt.isoformat()
         except ValueError:
             continue
     return value
