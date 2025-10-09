@@ -208,7 +208,7 @@ CREATE INDEX idx_concept_intl_desc_lang ON public.concept_international_descript
 
 CREATE TABLE public.concept_international_name (
 	concept_id int8 NOT NULL,
-	language_code varchar(11) NOT NULL,
+	language_code varchar(16) NOT NULL,
 	concept_international_name varchar(200) NULL,
 	CONSTRAINT concept_international_name_pkey PRIMARY KEY (concept_id, language_code)
 );
@@ -269,7 +269,7 @@ CREATE INDEX idx_concept_umls_cui_cui ON public.concept_umls_cui USING btree (um
 -- DROP TABLE public.country;
 
 CREATE TABLE public.country (
-	country_iso_alpha2_code bpchar(2) NOT NULL,
+	country_iso_alpha2_code bpchar(3) NOT NULL,
 	country varchar(50) NULL,
 	CONSTRAINT country_pkey PRIMARY KEY (country_iso_alpha2_code)
 );
@@ -465,9 +465,9 @@ CREATE INDEX idx_fulltext_origin_name ON public.fulltext_origin USING btree (ful
 CREATE TABLE public.funder (
 	funder_id int8 NOT NULL,
 	funder varchar(200) NULL,
-	country_iso_alpha2_code bpchar(2) NULL,
+	country_iso_alpha2_code bpchar(3) NULL,
 	description varchar(250) NULL,
-	homepage_url varchar(200) NULL,
+	homepage_url varchar(2000) NULL,
 	ror_id varchar(9) NULL,
 	openalex_id varchar(11) NULL,
 	wikidata_id varchar(10) NULL,
@@ -525,15 +525,15 @@ CREATE TABLE public.institution (
 	institution_id int8 NOT NULL,
 	institution varchar(200) NULL,
 	institution_type_id int2 NULL,
-	country_iso_alpha2_code bpchar(2) NULL,
+	country_iso_alpha2_code bpchar(3) NULL,
 	region_id int2 NULL,
 	geonames_city_id int4 NULL,
 	latitude float8 NULL,
 	longitude float8 NULL,
-	homepage_url varchar(600) NULL,
+	homepage_url varchar(2000) NULL,
 	is_super_system bool NULL,
 	ror_id varchar(9) NULL,
-	grid_id varchar(13) NULL,
+	grid_id varchar(20) NULL,
 	openalex_id varchar(11) NULL,
 	mag_id int8 NULL,
 	wikidata_id varchar(10) NULL,
@@ -672,7 +672,7 @@ CREATE INDEX idx_institution_publisher_pub_id ON public.institution_publisher US
 
 CREATE TABLE public.institution_relationship_type (
 	institution_relationship_type_id int2 NOT NULL,
-	institution_relationship_type varchar(10) NULL,
+	institution_relationship_type varchar(15) NULL,
 	CONSTRAINT institution_relationship_type_pkey PRIMARY KEY (institution_relationship_type_id)
 );
 CREATE INDEX idx_inst_rel_type_name ON public.institution_relationship_type USING btree (institution_relationship_type);
@@ -788,7 +788,7 @@ CREATE TABLE public.publisher (
 	publisher varchar(200) NULL,
 	hierarchy_level int2 NULL,
 	parent_publisher_id int8 NULL,
-	homepage_url varchar(200) NULL,
+	homepage_url varchar(2000) NULL,
 	ror_id varchar(9) NULL,
 	openalex_id varchar(11) NULL,
 	wikidata_id varchar(10) NULL,
@@ -830,7 +830,7 @@ CREATE INDEX idx_publisher_alt_name ON public.publisher_alternative_name USING b
 CREATE TABLE public.publisher_country (
 	publisher_id int8 NOT NULL,
 	country_seq int2 NOT NULL,
-	country_iso_alpha2_code bpchar(2) NULL,
+	country_iso_alpha2_code bpchar(3) NULL,
 	CONSTRAINT publisher_country_pkey PRIMARY KEY (publisher_id, country_seq)
 );
 CREATE INDEX idx_publisher_country_code ON public.publisher_country USING btree (country_iso_alpha2_code);
@@ -843,7 +843,7 @@ CREATE INDEX idx_publisher_country_code ON public.publisher_country USING btree 
 -- DROP TABLE public.raw_affiliation_string;
 
 CREATE TABLE public.raw_affiliation_string (
-	raw_affiliation_string_id int4 NOT NULL,
+	raw_affiliation_string_id int8 NOT NULL,
 	raw_affiliation_string varchar(800) NULL,
 	CONSTRAINT raw_affiliation_string_pkey PRIMARY KEY (raw_affiliation_string_id)
 );
@@ -857,7 +857,7 @@ CREATE INDEX idx_raw_affil_string ON public.raw_affiliation_string USING btree (
 -- DROP TABLE public.raw_author_name;
 
 CREATE TABLE public.raw_author_name (
-	raw_author_name_id int4 NOT NULL,
+	raw_author_name_id int8 NOT NULL,
 	raw_author_name varchar(800) NULL,
 	CONSTRAINT raw_author_name_pkey PRIMARY KEY (raw_author_name_id)
 );
@@ -887,12 +887,12 @@ CREATE INDEX idx_region_name ON public.region USING btree (region);
 CREATE TABLE public."source" (
 	source_id int8 NOT NULL,
 	"source" varchar(800) NULL,
-	abbreviation varchar(100) NULL,
+	abbreviation varchar(200) NULL,
 	source_type_id int2 NULL,
-	country_iso_alpha2_code bpchar(2) NULL,
+	country_iso_alpha2_code bpchar(3) NULL,
 	host_organization_publisher_id int8 NULL,
 	host_organization_institution_id int8 NULL,
-	homepage_url varchar(600) NULL,
+	homepage_url varchar(2000) NULL,
 	issn_l bpchar(9) NULL,
 	openalex_id varchar(11) NULL,
 	mag_id int8 NULL,
@@ -975,7 +975,7 @@ CREATE TABLE public.source_society (
 	source_id int8 NOT NULL,
 	society_seq int2 NOT NULL,
 	society varchar(500) NULL,
-	homepage_url varchar(250) NULL,
+	homepage_url varchar(2000) NULL,
 	CONSTRAINT source_society_pkey PRIMARY KEY (source_id, society_seq)
 );
 CREATE INDEX idx_source_society_name ON public.source_society USING btree (society);
@@ -1177,7 +1177,7 @@ CREATE TABLE public.work (
 	pmid int4 NULL,
 	pmcid int4 NULL,
 	arxiv_id varchar(80) NULL,
-	language_iso2_code bpchar(2) NULL,
+	language_iso2_code bpchar(3) NULL,
 	is_paratext bool NULL,
 	is_retracted bool NULL,
 	is_oa bool NULL,
@@ -1235,7 +1235,7 @@ CREATE TABLE public.work_abstract (
 CREATE TABLE public.work_affiliation (
 	work_id int8 NOT NULL,
 	affiliation_seq int2 NOT NULL,
-	raw_affiliation_string_id int4 NULL,
+	raw_affiliation_string_id int8 NULL,
 	CONSTRAINT work_affiliation_pkey PRIMARY KEY (work_id, affiliation_seq)
 );
 CREATE INDEX idx_work_affil_raw_string_id ON public.work_affiliation USING btree (raw_affiliation_string_id);
@@ -1269,7 +1269,7 @@ CREATE TABLE public.work_author (
 	author_id int8 NULL,
 	author_position_id int2 NULL,
 	is_corresponding_author bool NULL,
-	raw_author_name_id int4 NULL,
+	raw_author_name_id int8 NULL,
 	CONSTRAINT work_author_pkey PRIMARY KEY (work_id, author_seq)
 );
 CREATE INDEX idx_work_author_author_id ON public.work_author USING btree (author_id);
@@ -1302,7 +1302,7 @@ CREATE TABLE public.work_author_country (
 	work_id int8 NOT NULL,
 	author_seq int2 NOT NULL,
 	country_seq int2 NOT NULL,
-	country_iso_alpha2_code bpchar(2) NULL,
+	country_iso_alpha2_code bpchar(3) NULL,
 	CONSTRAINT work_author_country_pkey PRIMARY KEY (work_id, author_seq, country_seq)
 );
 CREATE INDEX idx_work_author_country_code ON public.work_author_country USING btree (country_iso_alpha2_code);

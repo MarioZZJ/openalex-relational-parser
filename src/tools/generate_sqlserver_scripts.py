@@ -137,7 +137,7 @@ def generate_bulk_insert(tables: List[str]) -> str:
     for table in tables:
         csv_file = f"{table}.csv"
         lines.append(f"-- Load data for {table}")
-        lines.append(f"SET @Sql = N'BULK INSERT [dbo].[{table}] FROM ''' + @BasePath + N'/{csv_file}'' WITH (FORMAT=''CSV'', FIRSTROW = 2, TABLOCK);'")
+        lines.append(f"SET @Sql = N'BULK INSERT [dbo].[{table}] FROM ''' + @BasePath + N'/{csv_file}'' WITH (FORMAT=''CSV'', DATAFILETYPE = ''widechar'', FIRSTROW = 2, DELIMITER = ''\t'', TABLOCK);'")
         lines.append("EXEC (@Sql);")
         lines.append("")
         lines.append("-- If files are compressed (.csv.gz), decompress them before running this command.")
