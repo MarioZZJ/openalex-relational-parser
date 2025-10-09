@@ -332,6 +332,7 @@ class WorkTransformer:
         affiliation_seq: Dict[str, int],
     ) -> None:
         authorships = record.get("authorships") or []
+        inst_seen: Dict[int, List[int]] = defaultdict(list)
         for idx, authorship in enumerate(authorships, start=1):
             author = authorship.get("author") or {}
             author_id = numeric_openalex_id(author.get("id"))
@@ -369,6 +370,10 @@ class WorkTransformer:
                     {"work_id": work_id, "author_seq": idx, "affiliation_seq": seq},
                 )
 
+            self._emit_work_affiliation_institution_links(
+                work_id, authorship, affiliation_seq, inst_seen
+            )
+
             countries = authorship.get("countries") or []
             for c_idx, country_code in enumerate(countries, start=1):
                 if country_code:
@@ -382,13 +387,12 @@ class WorkTransformer:
                         },
                     )
 
-            self._emit_work_affiliation_institution_links(work_id, authorship, affiliation_seq)
-
     def _emit_work_affiliation_institution_links(
         self,
         work_id: int,
         authorship: Dict[str, object],
         affiliation_seq: Dict[str, int],
+        inst_seen: Dict[int, List[int]],
     ) -> None:
         institutions = authorship.get("institutions") or []
         if not institutions:
@@ -416,16 +420,18 @@ class WorkTransformer:
             grouped[seq].append(inst)
 
         for seq, inst_list in grouped.items():
-            for idx, inst in enumerate(inst_list, start=1):
+            seen_for_seq = inst_seen[seq]
+            for inst in inst_list:
                 inst_id = numeric_openalex_id(inst.get("id"))
-                if inst_id is None:
+                if inst_id is None or inst_id in seen_for_seq:
                     continue
+                seen_for_seq.append(inst_id)
                 self._emitter.emit(
                     "work_affiliation_institution",
                     {
                         "work_id": work_id,
                         "affiliation_seq": seq,
-                        "institution_seq": idx,
+                        "institution_seq": len(seen_for_seq),
                         "institution_id": inst_id,
                     },
                 )
