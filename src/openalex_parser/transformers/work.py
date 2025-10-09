@@ -10,6 +10,7 @@ from ..reference import EnumerationRegistry
 from ..utils import (
     bool_from_flag,
     canonical_openalex_id,
+    extract_numeric_id,
     numeric_openalex_id,
     parse_iso_date,
     parse_iso_datetime,
@@ -98,8 +99,8 @@ class WorkTransformer:
         ids = record.get("ids") or {}
         doi = _normalise_doi(ids.get("doi") or record.get("doi"))
         mag_id = safe_int(ids.get("mag"))
-        pmid = safe_int(ids.get("pmid"))
-        pmcid = canonical_openalex_id(ids.get("pmcid"))
+        pmid = extract_numeric_id(ids.get("pmid"))
+        pmcid = extract_numeric_id(ids.get("pmcid"))
         arxiv_id = canonical_openalex_id(ids.get("arxiv"))
 
         language = record.get("language")
@@ -560,7 +561,7 @@ class WorkTransformer:
                 "issue": biblio.get("issue"),
                 "pages": pages,
                 "doi": _normalise_doi(ids.get("doi") or record.get("doi")),
-                "pmid": ids.get("pmid"),
+                "pmid": extract_numeric_id(ids.get("pmid")),
                 "work_type": record.get("type"),
                 "n_cits": record.get("cited_by_count"),
                 "n_self_cits": None,

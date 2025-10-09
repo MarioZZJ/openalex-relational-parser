@@ -1,6 +1,7 @@
 """General utility helpers for OpenAlex parsing."""
 from __future__ import annotations
 
+import re
 from datetime import datetime
 from typing import Any, Mapping, Optional
 
@@ -74,6 +75,46 @@ def safe_int(value: Any) -> Optional[int]:
         return None
 
 
+def extract_numeric_id(value: Any) -> Optional[int]:
+    """Extract the dominant numeric identifier from a string or URL."""
+
+    if value is None:
+        return None
+    if isinstance(value, int):
+        return value
+    if isinstance(value, float) and value.is_integer():
+        return int(value)
+
+    value_str = str(value).strip()
+    if not value_str:
+        return None
+
+    # Try direct coercion (covers integer-like strings).
+    try:
+        return int(value_str)
+    except ValueError:
+        pass
+
+    numbers = re.findall(r"\d+", value_str)
+    if not numbers:
+        return None
+
+    significant = [num for num in numbers if len(num) >= 3] or numbers
+
+    best = significant[0]
+    best_len = len(best)
+    for num in significant[1:]:
+        num_len = len(num)
+        if num_len > best_len or (num_len == best_len):
+            best = num
+            best_len = num_len
+
+    try:
+        return int(best)
+    except ValueError:
+        return None
+
+
 def safe_float(value: Any) -> Optional[float]:
     try:
         return float(value)
@@ -105,6 +146,7 @@ __all__ = [
     "safe_int",
     "safe_float",
     "bool_from_flag",
+    "extract_numeric_id",
 ]
 
 
