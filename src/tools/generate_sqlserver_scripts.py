@@ -158,6 +158,7 @@ def generate_bcp_commands(tables: List[str]) -> str:
     lines.append("set \"FIELD_TERMINATOR=\\t\"")
     lines.append("set \"ROW_TERMINATOR=\\n\"")
     lines.append("set \"CODE_PAGE=65001\"")
+    lines.append("set \"BATCH_SIZE=100000\"")
     lines.append("")
     lines.append("if not exist \"%BASE_PATH%\" (")
     lines.append("    echo Base path \"%BASE_PATH%\" does not exist.")
@@ -180,7 +181,7 @@ def generate_bcp_commands(tables: List[str]) -> str:
     for table in tables:
         csv_file = f"{table}.csv"
         lines.append(f"echo Importing {table}")
-        lines.append(f"bcp \"%DATABASE%.dbo.{table}\" in \"%BASE_PATH%\\{csv_file}\" -S \"%SERVER%\" -U \"%USERNAME%\" -P \"%PASSWORD%\" -c %BCP_CODE_PAGE_OPT% -t %FIELD_TERMINATOR% -r %ROW_TERMINATOR% -F 2")
+        lines.append(f"bcp \"%DATABASE%.dbo.{table}\" in \"%BASE_PATH%\\{csv_file}\" -S \"%SERVER%\" -U \"%USERNAME%\" -P \"%PASSWORD%\" -c %BCP_CODE_PAGE_OPT% -b %BATCH_SIZE% -t %FIELD_TERMINATOR% -r %ROW_TERMINATOR% -F 2")
         lines.append("if errorlevel 1 exit /b %errorlevel%")
         lines.append("")
     lines.append("echo BCP import completed.")
