@@ -41,7 +41,7 @@ class CsvTableWriter:
         if not delimiter or len(delimiter) != 1:
             raise ValueError("CSV delimiter must be a single character.")
         self._handle = self.path.open("w", newline="\n", encoding=encoding)
-        self._handle.write("\ufeff")
+        # self._handle.write("\ufeff")
         self._writer = csv.writer(self._handle, lineterminator="\n", delimiter=delimiter)
         self._writer.writerow(self.table.column_names)
 
