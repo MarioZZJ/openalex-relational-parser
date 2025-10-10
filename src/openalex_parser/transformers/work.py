@@ -37,7 +37,8 @@ def _abstract_from_inverted_index(index: Optional[Dict[str, Sequence[int]]]) -> 
             reverse[position] = token
     if not reverse:
         return None
-    return " ".join(word for _, word in sorted(reverse.items()))
+    text = " ".join(word for _, word in sorted(reverse.items()))
+    return _normalise_text(text)
 
 
 def _sdg_id_from_url(url: Optional[str]) -> Optional[int]:
@@ -45,6 +46,13 @@ def _sdg_id_from_url(url: Optional[str]) -> Optional[int]:
         return None
     segment = url.rstrip("/").split("/")[-1]
     return safe_int(segment)
+
+
+def _normalise_text(value: Optional[str]) -> Optional[str]:
+    if not value:
+        return None
+    normalised = " ".join(value.replace("\r", " ").replace("\n", " ").replace("\t", " ").split())
+    return normalised or None
 
 
 class WorkTransformer:
@@ -166,6 +174,7 @@ class WorkTransformer:
 
     def _emit_work_title(self, work_id: int, record: Dict[str, object]) -> None:
         title = record.get("title") or record.get("display_name")
+        title = _normalise_text(title)
         if title:
             self._emitter.emit("work_title", {"work_id": work_id, "title": title})
 
@@ -336,16 +345,15 @@ class WorkTransformer:
         for idx, authorship in enumerate(authorships, start=1):
             author = authorship.get("author") or {}
             author_id = numeric_openalex_id(author.get("id"))
-            raw_name = (
-                authorship.get("raw_author_name")
-                or author.get("display_name")
-                or "Unknown"
-            )
-            raw_id = self._ids.generate("raw_author_name", raw_name, bits=48)
-            self._emitter.emit(
-                "raw_author_name",
-                {"raw_author_name_id": raw_id, "raw_author_name": raw_name},
-            )
+            raw_name_value = authorship.get("raw_author_name") or author.get("display_name")
+            normalised_raw_name = _normalise_text(raw_name_value)
+            raw_id = None
+            if normalised_raw_name:
+                raw_id = self._ids.generate("raw_author_name", normalised_raw_name, bits=48)
+                self._emitter.emit(
+                    "raw_author_name",
+                    {"raw_author_name_id": raw_id, "raw_author_name": normalised_raw_name},
+                )
 
             author_position_id = self._enums.id_for("author_position", authorship.get("author_position"))
             self._emitter.emit(
@@ -553,6 +561,7 @@ class WorkTransformer:
             pages = biblio.get("first_page")
 
         ids = record.get("ids") or {}
+        title_value = _normalise_text(record.get("title") or record.get("display_name"))
         self._emitter.emit(
             "work_detail",
             {
@@ -561,7 +570,7 @@ class WorkTransformer:
                 "author_et_al": author_et_al,
                 "institution_first": first_institution,
                 "institution_et_al": institution_et_al,
-                "title": record.get("title") or record.get("display_name"),
+                "title": title_value,
                 "source": ((record.get("primary_location") or {}).get("source") or {}).get("display_name"),
                 "pub_year": record.get("publication_year"),
                 "volume": biblio.get("volume"),
@@ -584,12 +593,20 @@ class WorkTransformer:
     @staticmethod
     def _extract_affiliation_strings(authorship: Dict[str, object]) -> List[str]:
         raw_strings = authorship.get("raw_affiliation_strings") or []
-        cleaned = [value.strip() for value in raw_strings if value and value.strip()]
+        cleaned = []
+        for value in raw_strings:
+            normalised = _normalise_text(value)
+            if normalised:
+                cleaned.append(normalised)
         if cleaned:
             return cleaned
         raw = authorship.get("raw_affiliation_string")
         if raw:
-            parts = [part.strip() for part in raw.split(";") if part.strip()]
+            parts = []
+            for part in raw.replace("\r", " ").replace("\n", " ").split(";"):
+                normalised = _normalise_text(part)
+                if normalised:
+                    parts.append(normalised)
             if parts:
                 return parts
         return []
