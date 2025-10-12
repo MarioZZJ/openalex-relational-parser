@@ -1,6 +1,7 @@
 """Transformer for source entities."""
 from __future__ import annotations
 
+import re
 from typing import Dict
 
 from ..emitter import TableEmitter
@@ -15,6 +16,8 @@ from ..utils import (
     parse_iso_datetime,
     safe_int,
 )
+
+ISSN_PATTERN = re.compile(r"\d{4}-\d{3}[\dX]")
 
 
 class SourceTransformer:
@@ -49,7 +52,7 @@ class SourceTransformer:
         if fatcat_url:
             fatcat_id = fatcat_url.rstrip("/").split("/")[-1]
         mag_id = safe_int(ids.get("mag"))
-        issn_l = record.get("issn_l") or ids.get("issn_l")
+        issn_l = self._normalize_issn(record.get("issn_l") or ids.get("issn_l"))
 
         source_type_id = self._enums.id_for("source_type", record.get("type"))
 
@@ -132,21 +135,42 @@ class SourceTransformer:
             )
 
     # ------------------------------------------------------------------
+    @staticmethod
+    def _normalize_issn(raw_value: object) -> str | None:
+        if raw_value is None:
+            return None
+        text = str(raw_value).strip()
+        if not text:
+            return None
+        if ":" in text:
+            text = text.rsplit(":", 1)[-1].strip()
+        text = text.upper()
+        match = ISSN_PATTERN.search(text)
+        if match:
+            return match.group(0)
+        if len(text) >= 9:
+            candidate = text[-9:]
+            if ISSN_PATTERN.fullmatch(candidate):
+                return candidate
+        return None
+
+    # ------------------------------------------------------------------
     def _emit_issn(self, source_id: int, record: Dict[str, object]) -> None:
         issns = record.get("issn") or (record.get("ids") or {}).get("issn") or []
         seq = 0
         seen = set()
         for issn in issns:
-            if not issn or issn in seen:
+            normalized = self._normalize_issn(issn)
+            if not normalized or normalized in seen:
                 continue
-            seen.add(issn)
+            seen.add(normalized)
             seq += 1
             self._emitter.emit(
                 "source_issn",
                 {
                     "source_id": source_id,
                     "issn_seq": seq,
-                    "issn": issn,
+                    "issn": normalized,
                 },
             )
 
