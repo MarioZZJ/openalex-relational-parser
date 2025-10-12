@@ -175,16 +175,20 @@ def canonical_wikidata_id(value: Optional[str]) -> Optional[str]:
     return value or None
 
 
+_ORCID_PATTERN = re.compile(r"\d{4}-\d{4}-\d{4}-\d{3}[0-9X]", re.IGNORECASE)
+
+
 def canonical_orcid(value: Optional[str]) -> Optional[str]:
-    """Return bare ORCID (0000-0000-0000-0000) when provided as URL."""
+    """Extract the canonical 19 character ORCID irrespective of URL prefixes."""
 
     if not value:
         return None
     value = value.strip()
     if not value:
         return None
-    if value.lower().startswith('https://orcid.org/'):
-        value = value.split('/', 3)[-1]
+    match = _ORCID_PATTERN.search(value)
+    if match:
+        return match.group(0).upper()
     return value or None
 
 
