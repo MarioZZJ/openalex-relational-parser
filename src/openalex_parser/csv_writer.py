@@ -21,6 +21,9 @@ def _format_cell(value: Any) -> Any:
         return value.isoformat()
     if isinstance(value, Decimal):
         return format(value, "f")
+    if isinstance(value, str):
+        cleaned = " ".join(value.replace("\r", " ").replace("\n", " ").replace("\t", " ").split())
+        return cleaned
     return value
 
 
