@@ -87,7 +87,8 @@ class WorkTransformer:
         self._emit_work_grants(work_id, record)
         self._emit_work_references(work_id, record)
         self._emit_work_related(work_id, record)
-        self._emit_work_detail(work_id, record)
+        # Work detail rows are populated downstream; skip emission during parsing.
+        # self._emit_work_detail(work_id, record)
 
     def _emit_work(self, work_id: int, record: Dict[str, object]) -> None:
         type_name = (record.get("type") or "other").replace("_", "-")
@@ -498,17 +499,18 @@ class WorkTransformer:
                 "work_reference",
                 {"work_id": work_id, "reference_seq": idx, "cited_work_id": cited_id},
             )
-            self._emitter.emit(
-                "citation",
-                {
-                    "citing_work_id": work_id,
-                    "reference_seq": idx,
-                    "cited_work_id": cited_id,
-                    "pub_year": None,
-                    "cit_window": None,
-                    "is_self_cit": None,
-                },
-            )
+            # Citations are generated post-load, so skip emitting them during parsing.
+            # self._emitter.emit(
+            #     "citation",
+            #     {
+            #         "citing_work_id": work_id,
+            #         "reference_seq": idx,
+            #         "cited_work_id": cited_id,
+            #         "pub_year": None,
+            #         "cit_window": None,
+            #         "is_self_cit": None,
+            #     },
+            # )
 
     def _emit_work_related(self, work_id: int, record: Dict[str, object]) -> None:
         related = record.get("related_works") or []
@@ -562,27 +564,28 @@ class WorkTransformer:
 
         ids = record.get("ids") or {}
         title_value = _normalise_text(record.get("title") or record.get("display_name"))
-        self._emitter.emit(
-            "work_detail",
-            {
-                "work_id": work_id,
-                "author_first": author_first,
-                "author_et_al": author_et_al,
-                "institution_first": first_institution,
-                "institution_et_al": institution_et_al,
-                "title": title_value,
-                "source": ((record.get("primary_location") or {}).get("source") or {}).get("display_name"),
-                "pub_year": record.get("publication_year"),
-                "volume": biblio.get("volume"),
-                "issue": biblio.get("issue"),
-                "pages": pages,
-                "doi": _normalise_doi(ids.get("doi") or record.get("doi")),
-                "pmid": extract_numeric_id(ids.get("pmid")),
-                "work_type": record.get("type"),
-                "n_cits": record.get("cited_by_count"),
-                "n_self_cits": None,
-            },
-        )
+        # Work detail rows are generated downstream, so skip emitting them during parsing.
+        # self._emitter.emit(
+        #     "work_detail",
+        #     {
+        #         "work_id": work_id,
+        #         "author_first": author_first,
+        #         "author_et_al": author_et_al,
+        #         "institution_first": first_institution,
+        #         "institution_et_al": institution_et_al,
+        #         "title": title_value,
+        #         "source": ((record.get("primary_location") or {}).get("source") or {}).get("display_name"),
+        #         "pub_year": record.get("publication_year"),
+        #         "volume": biblio.get("volume"),
+        #         "issue": biblio.get("issue"),
+        #         "pages": pages,
+        #         "doi": _normalise_doi(ids.get("doi") or record.get("doi")),
+        #         "pmid": extract_numeric_id(ids.get("pmid")),
+        #         "work_type": record.get("type"),
+        #         "n_cits": record.get("cited_by_count"),
+        #         "n_self_cits": None,
+        #     },
+        # )
 
     @staticmethod
     def _extract_source_id(source: Optional[Dict[str, object]]) -> Optional[int]:
