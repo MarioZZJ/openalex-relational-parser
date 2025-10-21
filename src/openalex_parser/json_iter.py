@@ -9,6 +9,14 @@ from typing import Dict, Iterable, Iterator, Optional
 
 JsonDict = Dict[str, object]
 
+try:
+    import orjson  # type: ignore[import-untyped]
+except ImportError:  # pragma: no cover - optional dependency
+    orjson = None
+
+_json_loads = orjson.loads if orjson is not None else json.loads
+print(f"Using {'orjson' if orjson is not None else 'json'} for JSON parsing.")
+
 
 @dataclass
 class ProgressReporter:
@@ -88,7 +96,7 @@ class SnapshotReader:
         self._last_file_count = 0
         with gzip.open(path, "rt", encoding="utf-8") as handle:
             for line in handle:
-                document = json.loads(line)
+                document = _json_loads(line)
                 yield document
                 self._last_file_count += 1
                 if progress:
