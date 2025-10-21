@@ -403,6 +403,34 @@ class WorkTransformer:
         affiliation_seq: Dict[str, int],
         inst_seen: Dict[int, List[int]],
     ) -> None:
+        emitted = False
+        for affiliation in authorship.get("affiliations") or []:
+            raw_value = _normalise_text(affiliation.get("raw_affiliation_string"))
+            if not raw_value:
+                continue
+            seq = affiliation_seq.get(raw_value)
+            if seq is None:
+                continue
+            seen_for_seq = inst_seen[seq]
+            for inst_ref in affiliation.get("institution_ids") or []:
+                inst_id = numeric_openalex_id(inst_ref)
+                if inst_id is None or inst_id in seen_for_seq:
+                    continue
+                seen_for_seq.append(inst_id)
+                self._emitter.emit(
+                    "work_affiliation_institution",
+                    {
+                        "work_id": work_id,
+                        "affiliation_seq": seq,
+                        "institution_seq": len(seen_for_seq),
+                        "institution_id": inst_id,
+                    },
+                )
+                emitted = True
+
+        if emitted:
+            return
+
         institutions = authorship.get("institutions") or []
         if not institutions:
             return
