@@ -148,8 +148,8 @@ def parse_args(argv: Optional[Iterable[str]] = None) -> argparse.Namespace:
     parser.add_argument(
         "--delimiter",
         type=_parse_delimiter,
-        default=",",
-        help="Single-character delimiter for generated CSV files (default: ',')",
+        default="\t",
+        help="Single-character delimiter for generated CSV files (default: '\\t')",
     )
     parser.add_argument(
         "--progress-interval",
