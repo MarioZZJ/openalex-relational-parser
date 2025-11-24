@@ -221,6 +221,11 @@ def parse_args(argv: Optional[Iterable[str]] = None) -> argparse.Namespace:
         default=1000,
         help="Records between progress messages (default: %(default)s)",
     )
+    parser.add_argument(
+        "--skip-merged-ids",
+        action="store_true",
+        help="Skip records whose IDs are listed under snapshot merged_ids (default: disabled)",
+    )
     return parser.parse_args(argv)
 
 
@@ -347,8 +352,12 @@ def main(argv: Optional[Iterable[str]] = None) -> int:
     args.output_dir.mkdir(parents=True, exist_ok=True)
     args.reference_dir.mkdir(parents=True, exist_ok=True)
 
-    merged_ids = load_merged_ids(args.snapshot)
-    print()
+    merged_ids: Dict[str, set[str]]
+    if args.skip_merged_ids:
+        merged_ids = load_merged_ids(args.snapshot)
+        print()
+    else:
+        merged_ids = {name: set() for name in ENTITY_DATASETS}
 
     max_records = None if not args.max_records or args.max_records <= 0 else args.max_records
     max_files = args.max_files if args.max_files not in (None, 0) else None
