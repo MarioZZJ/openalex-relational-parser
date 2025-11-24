@@ -7,7 +7,6 @@ from pathlib import Path
 from typing import Callable, Dict, Optional
 
 from .emitter import TableEmitter
-from .identifiers import StableIdGenerator
 
 
 @dataclass
@@ -23,10 +22,15 @@ class EnumerationConfig:
 class EnumerationRegistry:
     """Manage enumerations such as work types or licenses."""
 
-    def __init__(self, emitter: TableEmitter, reference_dir: Optional[Path] = None) -> None:
+    def __init__(
+        self,
+        emitter: TableEmitter,
+        reference_dir: Optional[Path] = None,
+        collector: Optional[Callable[[str, str], None]] = None,
+    ) -> None:
         self._emitter = emitter
         self._reference_dir = reference_dir
-        self._generator = StableIdGenerator()
+        self._collector = collector
         self._configs: Dict[str, EnumerationConfig] = {}
         self._value_to_id: Dict[str, Dict[str, int]] = {}
         self._id_to_value: Dict[str, Dict[int, str]] = {}
@@ -43,7 +47,10 @@ class EnumerationRegistry:
         if not path.exists():
             return
         with path.open(encoding="utf-8-sig", newline="") as handle:
-            reader = csv.DictReader(handle)
+            sample = handle.read(2048)
+            handle.seek(0)
+            delimiter = "\t" if "\t" in sample else ","
+            reader = csv.DictReader(handle, delimiter=delimiter)
             for row in reader:
                 raw_id = row.get(config.id_column)
                 raw_value = row.get(config.value_column)
@@ -71,12 +78,11 @@ class EnumerationRegistry:
         table_map = self._value_to_id[table]
         if value in table_map:
             return table_map[value]
-        identifier = self._generator.generate(table, value, bits=config.bits)
-        table_map[value] = identifier
-        self._id_to_value[table][identifier] = value
-        emit_row = {config.id_column: identifier, config.value_column: value}
-        self._emitter.emit(config.table, emit_row)
-        return identifier
+        if self._collector is not None:
+            self._collector(table, value)
+            table_map[value] = 0
+            return 0
+        raise KeyError(f"Value '{value}' not found in enumeration '{table}' assignments.")
 
     @staticmethod
     def _normalise(config: EnumerationConfig, value: str) -> str:

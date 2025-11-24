@@ -4,13 +4,13 @@ from __future__ import annotations
 import argparse
 import csv
 import gzip
-import sys
 from pathlib import Path
 from typing import Callable, Dict, Iterable, List, Mapping, Optional
 
 from .csv_writer import CsvWriterManager
 from .emitter import TableEmitter
 from .identifiers import StableIdGenerator
+from .id_catalog import IdCatalog, NamespaceConfig
 from .json_iter import ProgressReporter, SnapshotReader
 from .reference import EnumerationConfig, EnumerationRegistry
 from .schema import load_schema
@@ -30,9 +30,9 @@ from .transformers import (
 )
 
 DEFAULT_SCHEMA = Path("data/reference/openalex_cwts_schema.sql")
-DEFAULT_REFERENCE_DIR = Path("data/reference/openalex_cwts_sample_export")
-DEFAULT_SNAPSHOT = Path("data/openalex-snapshot-20250930/data")
 DEFAULT_OUTPUT_DIR = Path("output")
+DEFAULT_REFERENCE_DIR = DEFAULT_OUTPUT_DIR / "reference_ids"
+DEFAULT_SNAPSHOT = Path("data/openalex-snapshot-20250930/data")
 
 ENTITY_DATASETS: Mapping[str, str] = {
     "works": "works",
@@ -73,6 +73,70 @@ DEDUPE_KEYS: Mapping[str, tuple[str, ...]] = {
     "raw_affiliation_string": ("raw_affiliation_string_id",),
 }
 
+ENUMERATION_CONFIGS: List[EnumerationConfig] = [
+    EnumerationConfig("work_type", "work_type_id", "work_type", bits=15, reference_filename="work_type.csv"),
+    EnumerationConfig(
+        "doi_registration_agency",
+        "doi_registration_agency_id",
+        "doi_registration_agency",
+        bits=8,
+        reference_filename="doi_registration_agency.csv",
+    ),
+    EnumerationConfig("oa_status", "oa_status_id", "oa_status", bits=6, reference_filename="oa_status.csv"),
+    EnumerationConfig(
+        "apc_provenance",
+        "apc_provenance_id",
+        "apc_provenance",
+        bits=6,
+        reference_filename="apc_provenance.csv",
+    ),
+    EnumerationConfig(
+        "fulltext_origin",
+        "fulltext_origin_id",
+        "fulltext_origin",
+        bits=6,
+        reference_filename="fulltext_origin.csv",
+    ),
+    EnumerationConfig("data_source", "data_source_id", "data_source", bits=6, reference_filename="data_source.csv"),
+    EnumerationConfig("version", "version_id", "version", bits=6, reference_filename="version.csv"),
+    EnumerationConfig("license", "license_id", "license", bits=12, reference_filename="license.csv"),
+    EnumerationConfig("author_position", "author_position_id", "author_position", bits=4, reference_filename="author_position.csv"),
+    EnumerationConfig(
+        "sustainable_development_goal",
+        "sustainable_development_goal_id",
+        "sustainable_development_goal",
+        bits=8,
+        reference_filename="sustainable_development_goal.csv",
+    ),
+    EnumerationConfig(
+        "institution_type",
+        "institution_type_id",
+        "institution_type",
+        bits=6,
+        reference_filename="institution_type.csv",
+    ),
+    EnumerationConfig(
+        "institution_relationship_type",
+        "institution_relationship_type_id",
+        "institution_relationship_type",
+        bits=4,
+        reference_filename="institution_relationship_type.csv",
+    ),
+    EnumerationConfig("region", "region_id", "region", bits=20, reference_filename="region.csv"),
+    EnumerationConfig("source_type", "source_type_id", "source_type", bits=6, reference_filename="source_type.csv"),
+]
+
+NAMESPACE_CONFIGS: List[NamespaceConfig] = [
+    NamespaceConfig("keyword", "keyword_ids.csv", "keyword_id", "keyword"),
+    NamespaceConfig(
+        "raw_affiliation_string",
+        "raw_affiliation_string_ids.csv",
+        "raw_affiliation_string_id",
+        "raw_affiliation_string",
+    ),
+    NamespaceConfig("raw_author_name", "raw_author_name_ids.csv", "raw_author_name_id", "raw_author_name"),
+]
+
 
 def _parse_delimiter(value: str) -> str:
     if not value:
@@ -100,7 +164,7 @@ def parse_args(argv: Optional[Iterable[str]] = None) -> argparse.Namespace:
         "--reference-dir",
         type=Path,
         default=DEFAULT_REFERENCE_DIR,
-        help="Directory containing reference CSV enumerations (default: %(default)s)",
+        help="Directory where generated enumeration/ID CSVs will be stored (default: %(default)s)",
     )
     parser.add_argument(
         "--snapshot",
@@ -197,71 +261,7 @@ def load_merged_ids(snapshot_root: Path) -> Dict[str, set[str]]:
 
 
 def register_enumerations(enums: EnumerationRegistry) -> None:
-    configs = [
-        EnumerationConfig("work_type", "work_type_id", "work_type", bits=15, reference_filename="work_type.csv"),
-        EnumerationConfig(
-            "doi_registration_agency",
-            "doi_registration_agency_id",
-            "doi_registration_agency",
-            bits=8,
-            reference_filename="doi_registration_agency.csv",
-        ),
-        EnumerationConfig("oa_status", "oa_status_id", "oa_status", bits=6, reference_filename="oa_status.csv"),
-        EnumerationConfig(
-            "apc_provenance",
-            "apc_provenance_id",
-            "apc_provenance",
-            bits=6,
-            reference_filename="apc_provenance.csv",
-        ),
-        EnumerationConfig(
-            "fulltext_origin",
-            "fulltext_origin_id",
-            "fulltext_origin",
-            bits=6,
-            reference_filename="fulltext_origin.csv",
-        ),
-        EnumerationConfig("data_source", "data_source_id", "data_source", bits=6, reference_filename="data_source.csv"),
-        EnumerationConfig("version", "version_id", "version", bits=6, reference_filename="version.csv"),
-        EnumerationConfig("license", "license_id", "license", bits=12, reference_filename="license.csv"),
-        EnumerationConfig(
-            "author_position",
-            "author_position_id",
-            "author_position",
-            bits=4,
-            reference_filename="author_position.csv",
-        ),
-        EnumerationConfig(
-            "sustainable_development_goal",
-            "sustainable_development_goal_id",
-            "sustainable_development_goal",
-            bits=8,
-            reference_filename="sustainable_development_goal.csv",
-        ),
-        EnumerationConfig(
-            "institution_type",
-            "institution_type_id",
-            "institution_type",
-            bits=6,
-            reference_filename="institution_type.csv",
-        ),
-        EnumerationConfig(
-            "institution_relationship_type",
-            "institution_relationship_type_id",
-            "institution_relationship_type",
-            bits=4,
-            reference_filename="institution_relationship_type.csv",
-        ),
-        EnumerationConfig("region", "region_id", "region", bits=20, reference_filename="region.csv"),
-        EnumerationConfig(
-            "source_type",
-            "source_type_id",
-            "source_type",
-            bits=6,
-            reference_filename="source_type.csv",
-        ),
-    ]
-    for config in configs:
+    for config in ENUMERATION_CONFIGS:
         enums.register(config)
 
 
@@ -278,6 +278,61 @@ def expand_entities(requested: List[str]) -> List[str]:
     return ordered
 
 
+class NullEmitter:
+    """Sink emitter used during ID collection."""
+
+    def emit(self, table: str, row: Dict[str, object]) -> None:  # pragma: no cover - trivial
+        return
+
+
+def process_entities(
+    phase: str,
+    entities: List[str],
+    reader: SnapshotReader,
+    emitter: TableEmitter,
+    enums: EnumerationRegistry,
+    ids: StableIdGenerator,
+    merged_ids: Dict[str, set[str]],
+    *,
+    updated_dates: Optional[Iterable[str]],
+    max_files: Optional[int],
+    max_records: Optional[int],
+    progress_interval: int,
+) -> Dict[str, int]:
+    overall_counts: Dict[str, int] = {}
+    for entity in entities:
+        dataset = ENTITY_DATASETS[entity]
+        transformer = build_transformer(entity, emitter, enums, ids)
+        reporter = ProgressReporter(f"{phase}-{entity}", interval=max(progress_interval, 1))
+        processed = 0
+        skipped_merged = 0
+        skip_ids = merged_ids.get(entity, set())
+        try:
+            for record in reader.iter_entity(
+                dataset,
+                updated_dates=updated_dates,
+                max_files=max_files,
+                max_records=max_records,
+                progress=reporter,
+            ):
+                record_id = canonical_openalex_id(record.get("id")) if isinstance(record, dict) else None
+                if record_id and record_id in skip_ids:
+                    skipped_merged += 1
+                    continue
+                transformer.transform(record)
+                processed += 1
+        except FileNotFoundError as exc:
+            print(f"Skipping {entity}: {exc}")
+            overall_counts[entity] = 0
+            continue
+        summary = reporter.summary()
+        if skipped_merged:
+            summary = f"{summary} (skipped {skipped_merged} merged ids)"
+        print(summary)
+        overall_counts[entity] = processed
+    return overall_counts
+
+
 def build_transformer(name: str, emitter: TableEmitter, enums: EnumerationRegistry, ids: StableIdGenerator):
     factory = TRANSFORMER_FACTORIES[name]
     return factory(emitter, enums, ids)
@@ -290,6 +345,43 @@ def main(argv: Optional[Iterable[str]] = None) -> int:
 
     schema = load_schema(args.schema)
     args.output_dir.mkdir(parents=True, exist_ok=True)
+    args.reference_dir.mkdir(parents=True, exist_ok=True)
+
+    merged_ids = load_merged_ids(args.snapshot)
+    print()
+
+    max_records = None if not args.max_records or args.max_records <= 0 else args.max_records
+    max_files = args.max_files if args.max_files not in (None, 0) else None
+    updated_dates = args.updated_dates
+    progress_interval = args.progress_interval
+
+    catalog = IdCatalog(ENUMERATION_CONFIGS, NAMESPACE_CONFIGS)
+    if catalog.load_existing(args.reference_dir):
+        print(f"Found existing ID catalog under {args.reference_dir}; skipping collection.")
+    else:
+        print("Collecting enumeration and auxiliary IDs...")
+        reader = SnapshotReader(args.snapshot)
+        null_emitter = NullEmitter()
+        collecting_enums = EnumerationRegistry(null_emitter, collector=catalog.record_enum)
+        register_enumerations(collecting_enums)
+        collecting_ids = StableIdGenerator(recorder=catalog.record_namespace)
+        process_entities(
+            phase="collect",
+            entities=entities,
+            reader=reader,
+            emitter=null_emitter,
+            enums=collecting_enums,
+            ids=collecting_ids,
+            merged_ids=merged_ids,
+            updated_dates=updated_dates,
+            max_files=max_files,
+            max_records=max_records,
+            progress_interval=progress_interval,
+        )
+        catalog.finalize(args.reference_dir)
+        print(f"Wrote ID catalog to {args.reference_dir}")
+    print("\nStarting full parse...\n")
+    reader = SnapshotReader(args.snapshot)
 
     writers = CsvWriterManager(
         schema,
@@ -300,50 +392,24 @@ def main(argv: Optional[Iterable[str]] = None) -> int:
     emitter = TableEmitter(writers, dedupe_keys=DEDUPE_KEYS)
     enums = EnumerationRegistry(emitter, args.reference_dir)
     register_enumerations(enums)
-
-    merged_ids = load_merged_ids(args.snapshot)
-    print()
-
-    reader = SnapshotReader(args.snapshot)
-    id_generator = StableIdGenerator()
-
-    max_records = None if not args.max_records or args.max_records <= 0 else args.max_records
-    max_files = args.max_files if args.max_files not in (None, 0) else None
-    updated_dates = args.updated_dates
+    id_generator = StableIdGenerator(assignments=catalog.namespace_assignments)
 
     overall_counts: Dict[str, int] = {}
 
     try:
-        for entity in entities:
-            dataset = ENTITY_DATASETS[entity]
-            transformer = build_transformer(entity, emitter, enums, id_generator)
-            reporter = ProgressReporter(entity, interval=max(args.progress_interval, 1))
-            processed = 0
-            skipped_merged = 0
-            skip_ids = merged_ids.get(entity, set())
-            try:
-                for record in reader.iter_entity(
-                    dataset,
-                    updated_dates=updated_dates,
-                    max_files=max_files,
-                    max_records=max_records,
-                    progress=reporter,
-                ):
-                    record_id = canonical_openalex_id(record.get("id")) if isinstance(record, dict) else None
-                    if record_id and record_id in skip_ids:
-                        skipped_merged += 1
-                        continue
-                    transformer.transform(record)
-                    processed += 1
-            except FileNotFoundError as exc:
-                print(f"Skipping {entity}: {exc}")
-                overall_counts[entity] = 0
-                continue
-            summary = reporter.summary()
-            if skipped_merged:
-                summary = f"{summary} (skipped {skipped_merged} merged ids)"
-            print(summary)
-            overall_counts[entity] = processed
+        overall_counts = process_entities(
+            phase="parse",
+            entities=entities,
+            reader=reader,
+            emitter=emitter,
+            enums=enums,
+            ids=id_generator,
+            merged_ids=merged_ids,
+            updated_dates=updated_dates,
+            max_files=max_files,
+            max_records=max_records,
+            progress_interval=progress_interval,
+        )
     finally:
         writers.close()
 

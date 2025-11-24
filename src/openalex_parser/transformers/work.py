@@ -51,8 +51,11 @@ def _sdg_id_from_url(url: Optional[str]) -> Optional[int]:
 def _normalise_text(value: Optional[str]) -> Optional[str]:
     if not value:
         return None
-    normalised = " ".join(value.replace("\r", " ").replace("\n", " ").replace("\t", " "))
-    return normalised or None
+    cleaned = value.replace("\r", " ").replace("\n", " ").replace("\t", " ")
+    tokens = cleaned.split()
+    if not tokens:
+        return None
+    return " ".join(tokens)
 
 
 class WorkTransformer:
