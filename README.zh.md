@@ -96,25 +96,6 @@ python -m openalex_parser.cli --entity authors --entity institutions --skip-merg
 - `output/reference_ids/`（或指定的 `--reference-dir`）包含生成的枚举 CSV（`license.csv`、`work_type.csv` 等）及命名空间文件（`keyword_ids.csv`、`raw_author_name_ids.csv` 等），取代了旧的 `data/reference/openalex_cwts_sample_export` 数据。
 - 国家、关键字、SDG、MeSH、原始作者名、原始机构字符串等共享维度表会使用确定性键去重，确保多实体之间不会重复。
 
-## 字段说明与后处理
-
-- 需要跨行聚合的分析字段（如引用窗口、自引标记等）默认留空，方便在后续分析步骤中填充。
-- JSON 解析优先使用 `orjson`，若不可用则回落到标准库 `json`。
-- 只要保留 `reference_dir` 内容，解析器将复用既有的枚举与命名空间 ID，保证跨版本运行的稳定性。
-- `citation` 表通常通过 `work_reference` 展开并补充引用窗口、自引等派生字段；`work_detail` 用于构建易读的文献引用文本（包含 `author_et_al` 等），推荐在数据库内通过 SQL 生成。
-
-## 故障排查
-
-- **缺少实体目录**：确认 `data/openalex-snapshot-YYYYMMDD/data` 下存在 `works/`、`authors/` 等文件夹；CLI 会自动跳过缺失的实体。
-- **冒烟测试过慢**：利用 `--max-records`、`--max-files`、`--updated-date` 控制输入规模。
-- **merged IDs 仍被导入**：请确保提供了 `--skip-merged-ids` 并且 `merged_ids/` 目录位于快照路径或其父目录。
-- **导入工具需要特定编码/分隔符**：使用 `--encoding` 或 `--delimiter` 覆盖默认设置（例如 SQL Server BULK INSERT 常用 UTF-16LE + 制表符）。
-
-## 下一步建议
-
-- 在数据库内编写 SQL 视图或作业，生成 `citation`、`work_detail` 以及其他分析字段。
-- 构建自动化校验流程，将生成的 CSV 头部与 CWTS 模式比对，以便及时发现模式更新。
-
 **版本提醒**：`output/reference_ids/` 内的枚举与命名空间 CSV 仅对应生成它们的那份 snapshot。更换 OpenAlex 快照版本时，请先清空或移动该目录，让 CLI 重新执行 collect 阶段，否则缺失的 reference ID 会导致解析报错。
 
 祝解析顺利！
