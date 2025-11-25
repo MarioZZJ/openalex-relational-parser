@@ -1,4 +1,5 @@
-data/*
+data/openalex-snapshot-*/*
 sqlserver/*
 output/*
+tools/*
 *.pyc
