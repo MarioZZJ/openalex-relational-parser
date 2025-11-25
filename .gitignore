@@ -1,5 +1,4 @@
-data/openalex-snapshot-20250930/*
+data/*
+sqlserver/*
 output/*
 *.pyc
-CWTS-OpenAlex-databases/*
-sqlserver/*
