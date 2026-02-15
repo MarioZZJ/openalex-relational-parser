@@ -70,6 +70,7 @@ python -m openalex_parser.cli --entity all --output-dir output
 - `--delimiter CHAR`：单字符分隔符（默认 `\t`，支持 `\t`、`,` 等）。
 - `--progress-interval N`：进度输出间隔（默认 `1000` 条）。
 - `--skip-merged-ids`：忽略快照 `merged_ids/` 目录中列出的已合并 ID。
+- `--collect-only`：仅执行 reference ID 收集并写入 `--reference-dir`，不进入 parse 阶段。
 
 #### 示例
 
@@ -88,6 +89,15 @@ python -m openalex_parser.cli ^
 
 ```
 python -m openalex_parser.cli --entity authors --entity institutions --skip-merged-ids
+```
+
+每个实体启动一个进程并行处理（先统一收集 reference IDs）：
+
+```
+scripts/run_parallel_entities.sh \
+    --snapshot ~/openalex-snapshot-legacy \
+    --output-dir output_parallel \
+    --skip-merged-ids
 ```
 
 ## 输出内容

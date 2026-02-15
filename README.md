@@ -67,6 +67,7 @@ The command will:
 - `--delimiter CHAR` - Single-character delimiter for CSV output (default `\t`).
 - `--progress-interval N` - Records between progress messages (default `1000`).
 - `--skip-merged-ids` - Drop IDs listed under snapshot `merged_ids/*` directories.
+- `--collect-only` - Build/update `--reference-dir` and exit before full CSV parsing.
 
 #### Examples
 
@@ -85,6 +86,15 @@ Process authors and institutions only while skipping merged IDs:
 
 ```
 python -m openalex_parser.cli --entity authors --entity institutions --skip-merged-ids
+```
+
+Run one process per entity in parallel (with a shared reference-ID collection phase first):
+
+```
+scripts/run_parallel_entities.sh \
+    --snapshot ~/openalex-snapshot-legacy \
+    --output-dir output_parallel \
+    --skip-merged-ids
 ```
 
 ## Output

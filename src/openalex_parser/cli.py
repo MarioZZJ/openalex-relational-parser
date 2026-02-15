@@ -226,6 +226,11 @@ def parse_args(argv: Optional[Iterable[str]] = None) -> argparse.Namespace:
         action="store_true",
         help="Skip records whose IDs are listed under snapshot merged_ids (default: disabled)",
     )
+    parser.add_argument(
+        "--collect-only",
+        action="store_true",
+        help="Run only the reference ID collection phase and skip CSV parsing",
+    )
     return parser.parse_args(argv)
 
 
@@ -389,6 +394,9 @@ def main(argv: Optional[Iterable[str]] = None) -> int:
         )
         catalog.finalize(args.reference_dir)
         print(f"Wrote ID catalog to {args.reference_dir}")
+    if args.collect_only:
+        print("\nCollection phase complete (--collect-only); skipping full parse.")
+        return 0
     print("\nStarting full parse...\n")
     reader = SnapshotReader(args.snapshot)
 
